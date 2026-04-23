@@ -1,0 +1,1021 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Actionable L&D Playbook — Interactive Infographic</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif;background:#08070f;color:#e2e8f0;scroll-behavior:smooth}
+*{box-sizing:border-box}
+.hero-grad{background:linear-gradient(170deg,#130f2a 0%,#08070f 60%);position:relative;overflow:hidden}
+.hero-grad::before{content:'';position:absolute;top:-40%;left:-30%;width:160%;height:160%;background:radial-gradient(ellipse at 25% 25%,rgba(99,102,241,.1) 0%,transparent 55%),radial-gradient(ellipse at 75% 70%,rgba(255,107,107,.06) 0%,transparent 50%);pointer-events:none}
+.glass{background:rgba(255,255,255,.025);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.06);border-radius:1.25rem}
+.glow-indigo{box-shadow:0 0 80px rgba(99,102,241,.08)}
+.glow-rose{box-shadow:0 0 80px rgba(244,63,94,.08)}
+.glow-amber{box-shadow:0 0 80px rgba(245,158,11,.08)}
+.glow-violet{box-shadow:0 0 80px rgba(139,92,246,.08)}
+.glow-cyan{box-shadow:0 0 80px rgba(6,182,212,.08)}
+.glow-emerald{box-shadow:0 0 80px rgba(16,185,129,.08)}
+.gt-indigo{background:linear-gradient(135deg,#818cf8,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-rose{background:linear-gradient(135deg,#fb7185,#f43f5e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-amber{background:linear-gradient(135deg,#fbbf24,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-violet{background:linear-gradient(135deg,#a78bfa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-cyan{background:linear-gradient(135deg,#22d3ee,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-emerald{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gt-white{background:linear-gradient(135deg,#f1f5f9,#cbd5e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:9999px;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .4s ease;opacity:0}
+.acc-body.open{opacity:1}
+.acc-toggle .chevron{transition:transform .3s ease}
+.acc-toggle.active .chevron{transform:rotate(180deg)}
+.strat-card{cursor:pointer;transition:all .35s ease;position:relative;overflow:hidden}
+.strat-card:hover{transform:translateY(-4px)}
+.chart-box{position:relative;width:100%;height:280px}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.vis{opacity:1;transform:translateY(0)}
+.flow-arr{width:2px;height:36px;margin:0 auto;background:linear-gradient(180deg,rgba(99,102,241,.35),transparent)}
+.matrix-row{transition:background .2s}
+.matrix-row:hover{background:rgba(255,255,255,.03)}
+.ext-link{color:#818cf8;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.ext-link:hover{color:#a5b4fc}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.show{opacity:1;pointer-events:auto}
+.modal-content{background:#13111f;border:1px solid rgba(255,255,255,.08);border-radius:1.5rem;max-width:640px;width:92%;max-height:85vh;overflow-y:auto;padding:2.5rem;position:relative;transform:translateY(20px);transition:transform .3s}
+.modal-overlay.show .modal-content{transform:translateY(0)}
+.modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;font-size:1.1rem;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,.12)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.float{animation:float 4s ease-in-out infinite}
+.float-d{animation:float 4s ease-in-out 1.5s infinite}
+@keyframes bounce-down{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.bounce-d{animation:bounce-down 1.5s ease-in-out infinite}
+
+/* Principle cards */
+.principle-card{transition:all .4s ease;cursor:pointer;position:relative;overflow:hidden}
+.principle-card:hover{transform:translateY(-6px) scale(1.01)}
+.principle-card::before{content:'';position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .4s;pointer-events:none}
+.principle-card:hover::before{opacity:1}
+.principle-card.p-indigo::before{background:linear-gradient(135deg,rgba(99,102,241,.06),transparent)}
+.principle-card.p-rose::before{background:linear-gradient(135deg,rgba(244,63,94,.06),transparent)}
+.principle-card.p-amber::before{background:linear-gradient(135deg,rgba(245,158,11,.06),transparent)}
+.principle-card.p-violet::before{background:linear-gradient(135deg,rgba(139,92,246,.06),transparent)}
+.principle-card.p-cyan::before{background:linear-gradient(135deg,rgba(6,182,212,.06),transparent)}
+.principle-detail{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.4,0,.2,1),opacity .4s ease,margin .4s ease;opacity:0;margin-top:0}
+.principle-detail.expanded{opacity:1;margin-top:1.5rem}
+
+/* Tabs for principles */
+.ptab{transition:all .25s;cursor:pointer;user-select:none}
+.ptab:hover{background:rgba(255,255,255,.04)}
+.ptab.active{border-color:currentColor}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- MODAL -->
+<div id="modal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" id="modalInner">
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('show')">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero-grad py-20 md:py-28 px-6 sm:px-12 relative z-10">
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    <div class="tag bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-8 mx-auto w-fit">
+      <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>L&amp;D Playbook 2025
+    </div>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] mb-6">
+      The Actionable<br><span class="gt-indigo">L&amp;D Playbook</span>
+    </h1>
+    <p class="text-base md:text-lg font-light leading-relaxed max-w-3xl mx-auto text-gray-400 mb-4">
+      Architecting the Modern Learner Experience — from cost center to performance-linked capability engine.
+    </p>
+    <p class="text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      A Fortune 500 company spent <strong class="text-white">$4.2M</strong> on a beautiful onboarding program. Six months later, <strong class="text-rose-400">fewer than 18%</strong> completed it — with near-zero impact on productivity. It wasn't underfunded. It was built for a learner that <em>no longer exists</em>.
+    </p>
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="glass p-5 text-center float strat-card" onclick="openModal('stat1')">
+        <div class="text-2xl font-black gt-rose mb-1">47s</div>
+        <div class="text-[.6rem] text-gray-500 uppercase tracking-widest">Avg. Attention Span</div>
+        <div class="text-[.55rem] text-gray-600 mt-1">Click to learn more →</div>
+      </div>
+      <div class="glass p-5 text-center float-d strat-card" onclick="openModal('stat2')">
+        <div class="text-2xl font-black gt-indigo mb-1">95%</div>
+        <div class="text-[.6rem] text-gray-500 uppercase tracking-widest">Nano Completion</div>
+        <div class="text-[.55rem] text-gray-600 mt-1">Click to learn more →</div>
+      </div>
+      <div class="glass p-5 text-center float strat-card" onclick="openModal('stat3')">
+        <div class="text-2xl font-black gt-amber mb-1">200-400%</div>
+        <div class="text-[.6rem] text-gray-500 uppercase tracking-widest">SRS Retention Boost</div>
+        <div class="text-[.55rem] text-gray-600 mt-1">Click to learn more →</div>
+      </div>
+      <div class="glass p-5 text-center float-d strat-card" onclick="openModal('stat4')">
+        <div class="text-2xl font-black gt-violet mb-1">85%</div>
+        <div class="text-[.6rem] text-gray-500 uppercase tracking-widest">Cohort Completion</div>
+        <div class="text-[.55rem] text-gray-600 mt-1">Click to learn more →</div>
+      </div>
+      <div class="glass p-5 text-center float strat-card col-span-2 md:col-span-1" onclick="openModal('stat5')">
+        <div class="text-2xl font-black gt-cyan mb-1">$0</div>
+        <div class="text-[.6rem] text-gray-500 uppercase tracking-widest">GPT Coach Cost</div>
+        <div class="text-[.55rem] text-gray-600 mt-1">Click to learn more →</div>
+      </div>
+    </div>
+    <div class="mt-10 text-gray-600 text-xs bounce-d">↓ Scroll to explore strategies &amp; principles ↓</div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-[#08070f]/80 backdrop-blur-xl border-b border-white/5 py-3 px-4 overflow-x-auto">
+  <div class="max-w-5xl mx-auto flex gap-2 min-w-max">
+    <a href="#principles" class="tag bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 hover:bg-emerald-500/20 transition">⚡ 5 Principles</a>
+    <a href="#s1" class="tag bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 hover:bg-indigo-500/20 transition">01 Nano-Learning</a>
+    <a href="#s2" class="tag bg-rose-500/10 text-rose-300 border border-rose-500/20 hover:bg-rose-500/20 transition">02 Spaced Repetition</a>
+    <a href="#s3" class="tag bg-amber-500/10 text-amber-300 border border-amber-500/20 hover:bg-amber-500/20 transition">03 Audio-First</a>
+    <a href="#s4" class="tag bg-violet-500/10 text-violet-300 border border-violet-500/20 hover:bg-violet-500/20 transition">04 Cohort Sprints</a>
+    <a href="#s5" class="tag bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 hover:bg-cyan-500/20 transition">05 AI Coaching</a>
+    <a href="#matrix" class="tag bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 transition">Action Matrix</a>
+  </div>
+</nav>
+
+<main class="max-w-6xl mx-auto px-5 sm:px-10 py-16 space-y-0">
+
+<!-- ============================================================ -->
+<!-- FIVE CORE PRINCIPLES -->
+<!-- ============================================================ -->
+<section id="principles" class="fade-up pb-20 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Foundation</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-emerald-500/30 to-transparent"></div>
+  </div>
+
+  <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center">The Five Core <span class="gt-emerald">Principles</span></h2>
+  <p class="text-gray-400 max-w-2xl mx-auto text-center mb-4">Every strategy in this playbook is grounded in cognitive science. These are the non-negotiable truths that separate effective L&amp;D from expensive noise.</p>
+  <p class="text-gray-500 text-xs text-center mb-12">Click any principle to expand its details ↓</p>
+
+  <!-- Principle 1: Attention as Currency -->
+  <div class="mb-4">
+    <div class="glass principle-card p-indigo glow-indigo p-6" onclick="togglePrinciple(this)">
+      <div class="flex items-start gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center flex-shrink-0 border border-indigo-500/20">
+          <span class="text-2xl">⚡</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="tag bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[.55rem]">Principle 01</span>
+            <span class="text-[.6rem] text-gray-600">→ Strategy 01: Nano-Learning</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Attention is Currency — Spend It in the First 10 Seconds</h3>
+          <p class="text-sm text-gray-400">The modern brain doesn't lack attention — it's <em>ruthlessly selective</em>. You have 10 seconds to prove value or lose the learner forever.</p>
+          <span class="text-[.6rem] text-indigo-400 mt-2 inline-block">Click to expand ↓</span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <div class="text-3xl font-black gt-indigo">47s</div>
+        </div>
+      </div>
+      <div class="principle-detail">
+        <div class="border-t border-white/5 pt-6 mt-2">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-indigo-300 text-sm mb-3">The Science</h4>
+              <p class="text-sm text-gray-400 mb-3">After a decade of algorithmic conditioning, the average digital attention span has plummeted to <strong class="text-white">47 seconds</strong>. For Gen Z, focused attention per post averages just <strong class="text-white">6.5 seconds</strong>. The brain hasn't gotten worse — it's gotten ruthlessly selective about what earns its limited cognitive resources.</p>
+              <p class="text-sm text-gray-400">We are no longer competing against other training providers. We are competing against the most sophisticated attention-engineering systems ever built: TikTok, Instagram, YouTube Shorts.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-indigo-300 text-sm mb-3">The Application</h4>
+              <ul class="text-sm text-gray-400 space-y-2">
+                <li class="flex items-start gap-2"><span class="text-indigo-400">→</span> <strong class="text-white">The 10-Second Rule:</strong> Every piece of content must open with a problem-first hook — not a logo animation or table of contents.</li>
+                <li class="flex items-start gap-2"><span class="text-indigo-400">→</span> <strong class="text-white">Single Objective:</strong> Each learning capsule covers exactly one concept. No bundling, no "while we're here" tangents.</li>
+                <li class="flex items-start gap-2"><span class="text-indigo-400">→</span> <strong class="text-white">Under 120 Seconds:</strong> Nano-learning achieves 95%+ completion vs. 20% for long-form modules.</li>
+              </ul>
+              <p class="text-xs text-gray-600 mt-3">Source: <a href="https://sgu.ac.id/the-decline-of-attention-span-in-the-digital-era/" target="_blank" class="ext-link">SGU Research</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Principle 2: Retrieval Over Consumption -->
+  <div class="mb-4">
+    <div class="glass principle-card p-rose glow-rose p-6" onclick="togglePrinciple(this)">
+      <div class="flex items-start gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-rose-500/10 flex items-center justify-center flex-shrink-0 border border-rose-500/20">
+          <span class="text-2xl">🧠</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="tag bg-rose-500/10 text-rose-300 border border-rose-500/20 text-[.55rem]">Principle 02</span>
+            <span class="text-[.6rem] text-gray-600">→ Strategy 02: Spaced Repetition</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Retrieval Beats Consumption — Every Time</h3>
+          <p class="text-sm text-gray-400">The brain is biologically designed to prune what it doesn't actively use. Passive watching creates the <em>illusion of knowing</em>; only retrieval practice creates actual memory.</p>
+          <span class="text-[.6rem] text-rose-400 mt-2 inline-block">Click to expand ↓</span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <div class="text-3xl font-black gt-rose">70%</div>
+        </div>
+      </div>
+      <div class="principle-detail">
+        <div class="border-t border-white/5 pt-6 mt-2">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-rose-300 text-sm mb-3">The Science</h4>
+              <p class="text-sm text-gray-400 mb-3">Within 24 hours of a training event, individuals forget up to <strong class="text-white">50%</strong> of the material. Within a week, that number rises to <strong class="text-white">70%</strong>. This is the Ebbinghaus Forgetting Curve, and it applies universally regardless of content quality.</p>
+              <p class="text-sm text-gray-400">Highlighting and re-reading — the most common "study" techniques — create a feeling of familiarity that masquerades as knowledge. Only active recall (forcing the brain to retrieve information) strengthens neural pathways.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-rose-300 text-sm mb-3">The Application</h4>
+              <ul class="text-sm text-gray-400 space-y-2">
+                <li class="flex items-start gap-2"><span class="text-rose-400">→</span> <strong class="text-white">Spaced Intervals:</strong> Surface concepts at 1 day, 3 days, 1 week, 2 weeks, 1 month — right before forgetting.</li>
+                <li class="flex items-start gap-2"><span class="text-rose-400">→</span> <strong class="text-white">200–400% Boost:</strong> SRS increases long-term retention by 200–400% compared to traditional study.</li>
+                <li class="flex items-start gap-2"><span class="text-rose-400">→</span> <strong class="text-white">3-Minute Daily Bursts:</strong> Axonify reports 72% improvement in performance using micro-retrieval.</li>
+              </ul>
+              <p class="text-xs text-gray-600 mt-3">Source: <a href="https://edurev.in/t/478733/Active-Recall-and-Spaced-Repetition" target="_blank" class="ext-link">EduRev</a>, <a href="https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition" target="_blank" class="ext-link">BCU</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Principle 3: Meet Learners in Their Medium -->
+  <div class="mb-4">
+    <div class="glass principle-card p-amber glow-amber p-6" onclick="togglePrinciple(this)">
+      <div class="flex items-start gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 flex items-center justify-center flex-shrink-0 border border-amber-500/20">
+          <span class="text-2xl">🎧</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="tag bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[.55rem]">Principle 03</span>
+            <span class="text-[.6rem] text-gray-600">→ Strategy 03: Audio-First</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Meet Learners Where They Already Are</h3>
+          <p class="text-sm text-gray-400">Stop forcing people to sit at desks. The most powerful learning moments happen during commutes, walks, and "dead time" — if you design for those contexts.</p>
+          <span class="text-[.6rem] text-amber-400 mt-2 inline-block">Click to expand ↓</span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <div class="text-3xl font-black gt-amber">71%</div>
+        </div>
+      </div>
+      <div class="principle-detail">
+        <div class="border-t border-white/5 pt-6 mt-2">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-amber-300 text-sm mb-3">The Science</h4>
+              <p class="text-sm text-gray-400 mb-3">In a Zoom-heavy culture, hybrid managers suffer from <strong class="text-white">screen fatigue</strong>. They lack the "desk time" required for traditional e-learning but possess significant "dead time" during commutes or physical activity.</p>
+              <p class="text-sm text-gray-400"><strong class="text-white">71% of podcast listeners</strong> use the format specifically to learn something new. Audio creates an emotional, intimate connection that visual slides cannot replicate — the brain processes spoken narrative differently than text.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-amber-300 text-sm mb-3">The Application</h4>
+              <ul class="text-sm text-gray-400 space-y-2">
+                <li class="flex items-start gap-2"><span class="text-amber-400">→</span> <strong class="text-white">Modality Shifting:</strong> Don't default to video. Match the format to the context: audio for commutes, mobile reels for breaks, Slack for workflow.</li>
+                <li class="flex items-start gap-2"><span class="text-amber-400">→</span> <strong class="text-white">Emotional Connection:</strong> Audio humanizes leadership and strategy in ways that slide decks never can.</li>
+                <li class="flex items-start gap-2"><span class="text-amber-400">→</span> <strong class="text-white">Zero Screen Time:</strong> Learning that requires no screen is learning that doesn't compete with work.</li>
+              </ul>
+              <p class="text-xs text-gray-600 mt-3">Source: <a href="https://riverside.com/blog/podcast-statistics" target="_blank" class="ext-link">Riverside Podcast Stats</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Principle 4: Social Accountability -->
+  <div class="mb-4">
+    <div class="glass principle-card p-violet glow-violet p-6" onclick="togglePrinciple(this)">
+      <div class="flex items-start gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-violet-500/10 flex items-center justify-center flex-shrink-0 border border-violet-500/20">
+          <span class="text-2xl">👥</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="tag bg-violet-500/10 text-violet-300 border border-violet-500/20 text-[.55rem]">Principle 04</span>
+            <span class="text-[.6rem] text-gray-600">→ Strategy 04: Cohort Sprints</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Learning is Social — Isolation Kills Completion</h3>
+          <p class="text-sm text-gray-400">Humans evolved to learn in groups. Self-paced courses ignore this biology and see <em>5–15% completion</em>. Add peers, and that number jumps to 85%.</p>
+          <span class="text-[.6rem] text-violet-400 mt-2 inline-block">Click to expand ↓</span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <div class="text-3xl font-black gt-violet">90%</div>
+        </div>
+      </div>
+      <div class="principle-detail">
+        <div class="border-t border-white/5 pt-6 mt-2">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-violet-300 text-sm mb-3">The Science</h4>
+              <p class="text-sm text-gray-400 mb-3">Self-paced digital courses have a dismal completion rate of <strong class="text-white">5–15%</strong> because they lack social accountability. Without a peer group, learning feels like a burdensome solo task rather than a development opportunity.</p>
+              <p class="text-sm text-gray-400">The NTL Institute Learning Pyramid shows that <strong class="text-white">peer teaching increases the teacher's own retention to 90%</strong>. The most effective learning mechanic isn't consuming — it's explaining to someone else.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-violet-300 text-sm mb-3">The Application</h4>
+              <ul class="text-sm text-gray-400 space-y-2">
+                <li class="flex items-start gap-2"><span class="text-violet-400">→</span> <strong class="text-white">Cohort Structure:</strong> Move groups through programs together. The social contract creates natural accountability.</li>
+                <li class="flex items-start gap-2"><span class="text-violet-400">→</span> <strong class="text-white">Teach-Back Mechanics:</strong> Requiring learners to teach concepts to peers is the single highest-retention activity.</li>
+                <li class="flex items-start gap-2"><span class="text-violet-400">→</span> <strong class="text-white">85% Completion:</strong> CBL drives completion from 5–15% to 85%.</li>
+              </ul>
+              <p class="text-xs text-gray-600 mt-3">Source: <a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank" class="ext-link">SQ Magazine</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Principle 5: Desirable Difficulty -->
+  <div class="mb-4">
+    <div class="glass principle-card p-cyan glow-cyan p-6" onclick="togglePrinciple(this)">
+      <div class="flex items-start gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0 border border-cyan-500/20">
+          <span class="text-2xl">🔥</span>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="tag bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-[.55rem]">Principle 05</span>
+            <span class="text-[.6rem] text-gray-600">→ Strategy 05: AI Coaching + Overarching</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Desirable Difficulty — Make It Hard, Not Easy</h3>
+          <p class="text-sm text-gray-400">The "struggle" of recall, the pressure of peer interaction, the discomfort of AI roleplay — that friction is exactly where <em>cognitive change occurs</em>.</p>
+          <span class="text-[.6rem] text-cyan-400 mt-2 inline-block">Click to expand ↓</span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <div class="text-2xl font-black gt-cyan">Core</div>
+        </div>
+      </div>
+      <div class="principle-detail">
+        <div class="border-t border-white/5 pt-6 mt-2">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-cyan-300 text-sm mb-3">The Science</h4>
+              <p class="text-sm text-gray-400 mb-3">L&amp;D success in 2026 is defined by <strong class="text-white">Desirable Difficulty</strong>. Cognitive psychology research consistently shows that learning which feels easy in the moment (passive video watching, highlighting) produces the <em>worst</em> long-term outcomes.</p>
+              <p class="text-sm text-gray-400">Conversely, techniques that feel harder — active recall, generation effects, interleaving, and Socratic questioning — produce dramatically better retention and transfer. The discomfort <em>is</em> the learning.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-cyan-300 text-sm mb-3">The Application</h4>
+              <ul class="text-sm text-gray-400 space-y-2">
+                <li class="flex items-start gap-2"><span class="text-cyan-400">→</span> <strong class="text-white">Socratic AI:</strong> AI coaches that ask questions rather than give answers — forcing the learner to generate insights.</li>
+                <li class="flex items-start gap-2"><span class="text-cyan-400">→</span> <strong class="text-white">Safe Failure:</strong> Roleplay with AI "resistant direct reports" lets managers practice high-pressure scenarios without real consequences.</li>
+                <li class="flex items-start gap-2"><span class="text-cyan-400">→</span> <strong class="text-white">Stop Optimizing for Ease:</strong> A "smooth" learning experience is often a sign that no cognitive change is occurring.</li>
+              </ul>
+              <p class="text-xs text-gray-600 mt-3">Source: <a href="https://www.disco.co/blog/top-10-ai-education-tools" target="_blank" class="ext-link">Disco.co</a>, <a href="https://www.techclass.com/resources/learning-and-development-articles/ai-and-employee-learning-how-adaptive-platforms-personalize-l-and-d-in-real-time" target="_blank" class="ext-link">TechClass</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Principles Summary Visual -->
+  <div class="mt-10 glass p-8 glow-emerald">
+    <h3 class="text-center text-sm font-bold text-gray-500 uppercase tracking-widest mb-8">How the Principles Connect</h3>
+    <div class="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+      <div class="text-center px-4 py-3">
+        <div class="text-2xl mb-2">⚡</div>
+        <div class="text-xs font-bold text-indigo-300">Capture</div>
+        <div class="text-[.6rem] text-gray-500">Attention</div>
+      </div>
+      <div class="text-gray-600 text-xl hidden md:block">→</div>
+      <div class="text-center px-4 py-3">
+        <div class="text-2xl mb-2">🧠</div>
+        <div class="text-xs font-bold text-rose-300">Reinforce</div>
+        <div class="text-[.6rem] text-gray-500">Retrieval</div>
+      </div>
+      <div class="text-gray-600 text-xl hidden md:block">→</div>
+      <div class="text-center px-4 py-3">
+        <div class="text-2xl mb-2">🎧</div>
+        <div class="text-xs font-bold text-amber-300">Deliver</div>
+        <div class="text-[.6rem] text-gray-500">In Context</div>
+      </div>
+      <div class="text-gray-600 text-xl hidden md:block">→</div>
+      <div class="text-center px-4 py-3">
+        <div class="text-2xl mb-2">👥</div>
+        <div class="text-xs font-bold text-violet-300">Sustain</div>
+        <div class="text-[.6rem] text-gray-500">Socially</div>
+      </div>
+      <div class="text-gray-600 text-xl hidden md:block">→</div>
+      <div class="text-center px-4 py-3">
+        <div class="text-2xl mb-2">🔥</div>
+        <div class="text-xs font-bold text-cyan-300">Deepen</div>
+        <div class="text-[.6rem] text-gray-500">Through Struggle</div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-gray-500 mt-6">Each principle builds on the previous — together they form a complete cognitive architecture for modern L&amp;D.</p>
+  </div>
+
+  <div class="flow-arr mt-10"></div>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- STRATEGY 1: NANO-LEARNING -->
+<!-- ============================================================ -->
+<section id="s1" class="fade-up pb-16 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Strategy 01</span>
+    <span class="tag bg-indigo-500/5 text-indigo-400/60 border border-indigo-500/10 text-[.5rem]">Principle: Attention as Currency</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-indigo-500/30 to-transparent"></div>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-bold mb-3">Nano-Learning &amp; <span class="gt-indigo">TikTok Pedagogy</span></h2>
+  <p class="text-gray-400 max-w-3xl mb-10">The average digital attention span has plummeted to <strong class="text-white">47 seconds</strong>. For Gen Z, focused attention per post averages just <strong class="text-white">6.5 seconds</strong>. Nano-learning compresses knowledge into ultra-short capsules of &lt;120 seconds.</p>
+  <div class="grid lg:grid-cols-2 gap-8">
+    <div class="space-y-6">
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-sm font-bold flex-shrink-0">✕</span>
+            <span class="font-bold text-white">The Attention Barrier</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400 leading-relaxed">Traditional onboarding relies on hour-long videos that see precipitous engagement drop-off. Research shows the average digital attention span has plummeted to <a href="https://sgu.ac.id/the-decline-of-attention-span-in-the-digital-era/" target="_blank" class="ext-link">47 seconds</a>. For Gen Z, focused attention per post averages just 6.5 seconds.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-sm font-bold flex-shrink-0">✓</span>
+            <span class="font-bold text-white">Single-Objective Learning Capsules</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400 leading-relaxed">Nano-learning compresses knowledge into ultra-short events of <a href="https://www.5mins.ai/resources/blog/nano-learning-vs-microlearning-whats-the-difference" target="_blank" class="ext-link">less than 120 seconds</a>. Platforms like 5Mins.ai achieve <strong class="text-white">95%+ completion rates</strong> vs. the 20% industry standard.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden border-l-2 border-indigo-500/40">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="text-lg">⚡</span>
+            <span class="font-bold text-indigo-300 text-sm">Implementation: The Onboarding Reel Library</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5 space-y-3">
+          <p class="text-sm text-gray-400">Produce a series of <strong class="text-white">90-second Vertical Reels</strong> for mobile instead of a 45-minute orientation.</p>
+          <ul class="text-sm text-gray-400 space-y-2 list-none">
+            <li class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">→</span> Each reel covers one task: "Configuring Okta FastPass" or "Navigating the Security Dashboard."</li>
+            <li class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">→</span> Use <a href="https://www.x-pilot.ai/blog/microlearning-video-creation-guide-corporate-training-2026" target="_blank" class="ext-link">AI tools like X-Pilot</a> to convert manuals to narrated clips for under $150/min.</li>
+            <li class="flex items-start gap-2"><span class="text-indigo-400 mt-0.5">→</span> <strong class="text-white">The 10-Second Rule:</strong> Every video must start with a problem-first hook.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="glass glow-indigo p-7">
+      <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-5">Completion Rate: Nano vs. Traditional</h3>
+      <div class="chart-box"><canvas id="chart1"></canvas></div>
+      <p class="text-[.65rem] text-gray-600 mt-4 text-center">Source: 5Mins.ai platform data; industry benchmarks</p>
+    </div>
+  </div>
+  <div class="flow-arr mt-10"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STRATEGY 2: SPACED REPETITION -->
+<!-- ============================================================ -->
+<section id="s2" class="fade-up pb-16 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-rose-500/10 text-rose-300 border border-rose-500/20">Strategy 02</span>
+    <span class="tag bg-rose-500/5 text-rose-400/60 border border-rose-500/10 text-[.5rem]">Principle: Retrieval Over Consumption</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-rose-500/30 to-transparent"></div>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-bold mb-3">Spaced Repetition for <span class="gt-rose">Leadership Retention</span></h2>
+  <p class="text-gray-400 max-w-3xl mb-10">Within 24 hours, learners forget up to <strong class="text-white">50%</strong>. Within a week, <strong class="text-white">70%</strong>. SRS boosts long-term retention by <strong class="text-white">200–400%</strong>.</p>
+  <div class="grid lg:grid-cols-2 gap-8">
+    <div class="glass glow-rose p-7 order-2 lg:order-1">
+      <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-5">Memory Retention Over Time</h3>
+      <div class="chart-box"><canvas id="chart2"></canvas></div>
+      <div class="flex gap-6 mt-4 justify-center">
+        <span class="flex items-center gap-2 text-xs text-gray-400"><span class="w-3 h-3 rounded-full bg-rose-400"></span>No Reinforcement</span>
+        <span class="flex items-center gap-2 text-xs text-gray-400"><span class="w-3 h-3 rounded-full bg-indigo-400"></span>With SRS</span>
+      </div>
+    </div>
+    <div class="space-y-6 order-1 lg:order-2">
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-sm font-bold flex-shrink-0">✕</span>
+            <span class="font-bold text-white">The Knowledge Leak</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">Manager development workshops fail because the brain prunes unused information. Within 24 hours, <a href="https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition" target="_blank" class="ext-link">50% is forgotten</a>; within a week, 70%.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-300 text-sm font-bold flex-shrink-0">🧠</span>
+            <span class="font-bold text-white">Scientific Recall Systems</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">SRS surfaces concepts just before forgetting. This method increases retention by <a href="https://edurev.in/t/478733/Active-Recall-and-Spaced-Repetition" target="_blank" class="ext-link">200–400%</a>. It's the core science behind Duolingo.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden border-l-2 border-rose-500/40">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="text-lg">⚡</span>
+            <span class="font-bold text-rose-300 text-sm">Implementation: The Leadership Nudge Bot</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5 space-y-3">
+          <p class="text-sm text-gray-400">Deploy a <strong class="text-white">30-day Slack-based reinforcement campaign</strong> for managers post-workshop.</p>
+          <ul class="text-sm text-gray-400 space-y-2 list-none">
+            <li class="flex items-start gap-2"><span class="text-rose-400 mt-0.5">→</span> Bot sends one daily question (e.g., "A direct report presents a conflict — what's the first NVC step?")</li>
+            <li class="flex items-start gap-2"><span class="text-rose-400 mt-0.5">→</span> Correct → delayed a week. Incorrect → repeats next day.</li>
+            <li class="flex items-start gap-2"><span class="text-rose-400 mt-0.5">→</span> Axonify: <strong class="text-white">72% improvement</strong> in performance using 3-minute daily bursts.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flow-arr mt-10"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STRATEGY 3: AUDIO-FIRST -->
+<!-- ============================================================ -->
+<section id="s3" class="fade-up pb-16 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-amber-500/10 text-amber-300 border border-amber-500/20">Strategy 03</span>
+    <span class="tag bg-amber-500/5 text-amber-400/60 border border-amber-500/10 text-[.5rem]">Principle: Meet Learners Where They Are</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-amber-500/30 to-transparent"></div>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-bold mb-3">Audio-First Development for <span class="gt-amber">Hybrid Leaders</span></h2>
+  <p class="text-gray-400 max-w-3xl mb-10"><strong class="text-white">71% of podcast listeners</strong> use audio specifically to learn. Audio creates emotional connection that slides cannot replicate.</p>
+  <div class="grid lg:grid-cols-2 gap-8">
+    <div class="space-y-6">
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 text-sm font-bold flex-shrink-0">✕</span>
+            <span class="font-bold text-white">Visual Burnout &amp; Time Scarcity</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">Hybrid managers suffer from <a href="https://riverside.com/blog/podcast-statistics" target="_blank" class="ext-link">screen fatigue</a>. They lack desk time for e-learning but have significant dead time during commutes or physical activity.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-300 text-sm font-bold flex-shrink-0">🎧</span>
+            <span class="font-bold text-white">The Intimate Medium of Podcasts</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">Internal podcasts humanize strategy and scale leadership insights. 71% of listeners use podcasts specifically to learn something new.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden border-l-2 border-amber-500/40">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="text-lg">⚡</span>
+            <span class="font-bold text-amber-300 text-sm">Implementation: Okta Insider Series</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5 space-y-3">
+          <p class="text-sm text-gray-400">Launch a <strong class="text-white">10-minute weekly internal podcast</strong> featuring unscripted leadership stories.</p>
+          <ul class="text-sm text-gray-400 space-y-2 list-none">
+            <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">→</span> Topics: "The hardest feedback conversation I ever had" or "Managing through a major launch."</li>
+            <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">→</span> Repurpose Q&A sessions. Use <a href="https://contentallies.com/learn/top-enterprise-podcast-solutions" target="_blank" class="ext-link">CoHost</a> to track listener demographics.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="glass glow-amber p-8 flex flex-col items-center justify-center text-center min-h-[380px]">
+      <div class="mb-8">
+        <div class="text-7xl font-black gt-amber mb-2">71%</div>
+        <div class="text-xs text-gray-500 uppercase tracking-widest font-semibold">Of Podcast Listeners<br>Use Audio to Learn</div>
+      </div>
+      <div class="w-16 h-px bg-white/10 mx-auto mb-8"></div>
+      <div class="mb-8">
+        <div class="text-7xl font-black gt-white mb-2">10m</div>
+        <div class="text-xs text-gray-500 uppercase tracking-widest font-semibold">Ideal Weekly<br>Episode Length</div>
+      </div>
+      <div class="w-16 h-px bg-white/10 mx-auto mb-8"></div>
+      <div>
+        <div class="text-3xl font-black text-amber-300 mb-2">Zero Screen Time</div>
+        <div class="text-xs text-gray-500 uppercase tracking-widest font-semibold">Required from Managers</div>
+      </div>
+    </div>
+  </div>
+  <div class="flow-arr mt-10"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STRATEGY 4: COHORT SPRINTS -->
+<!-- ============================================================ -->
+<section id="s4" class="fade-up pb-16 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-violet-500/10 text-violet-300 border border-violet-500/20">Strategy 04</span>
+    <span class="tag bg-violet-500/5 text-violet-400/60 border border-violet-500/10 text-[.5rem]">Principle: Social Accountability</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-violet-500/30 to-transparent"></div>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-bold mb-3">Cohort-Based <span class="gt-violet">Integration Sprints</span></h2>
+  <p class="text-gray-400 max-w-3xl mb-10">Self-paced courses: <strong class="text-white">5–15% completion</strong>. Cohort-based: <strong class="text-white">85%</strong>. Peer teaching increases the teacher's retention to <strong class="text-white">90%</strong>.</p>
+  <div class="grid lg:grid-cols-2 gap-8">
+    <div class="glass glow-violet p-7 order-2 lg:order-1">
+      <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-5">Completion Rate Comparison</h3>
+      <div class="chart-box"><canvas id="chart4"></canvas></div>
+    </div>
+    <div class="space-y-6 order-1 lg:order-2">
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 text-sm font-bold flex-shrink-0">✕</span>
+            <span class="font-bold text-white">The Isolation of Self-Paced Courses</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">Self-paced courses have a dismal <a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank" class="ext-link">5–15% completion rate</a> because they lack social accountability.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-300 text-sm font-bold flex-shrink-0">👥</span>
+            <span class="font-bold text-white">Social Accountability 2.0</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">CBL drives completion to <strong class="text-white">85%</strong>. Peer teaching increases the teacher's own retention to <strong class="text-white">90%</strong> per the NTL Learning Pyramid.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden border-l-2 border-violet-500/40">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="text-lg">⚡</span>
+            <span class="font-bold text-violet-300 text-sm">Implementation: The Two-Week New Hire Sprint</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5 space-y-3">
+          <p class="text-sm text-gray-400">Replace the self-paced portal with <strong class="text-white">2-week social sprints</strong> for new hires.</p>
+          <ul class="text-sm text-gray-400 space-y-2 list-none">
+            <li class="flex items-start gap-2"><span class="text-violet-400 mt-0.5">→</span> Group 20 new hires in a Slack channel. One "Mission" per week.</li>
+            <li class="flex items-start gap-2"><span class="text-violet-400 mt-0.5">→</span> Fridays: "Teach Back" sessions or peer-review code snippets.</li>
+            <li class="flex items-start gap-2"><span class="text-violet-400 mt-0.5">→</span> Use <a href="https://360learning.com/blog/corporate-learning-strategy/" target="_blank" class="ext-link">360Learning</a> for SME co-authored content.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flow-arr mt-10"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STRATEGY 5: AI COACHING -->
+<!-- ============================================================ -->
+<section id="s5" class="fade-up pb-16 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Strategy 05</span>
+    <span class="tag bg-cyan-500/5 text-cyan-400/60 border border-cyan-500/10 text-[.5rem]">Principle: Desirable Difficulty</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-transparent"></div>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-bold mb-3">AI-Powered <span class="gt-cyan">Socratic Coaching</span></h2>
+  <p class="text-gray-400 max-w-3xl mb-10">Socratic AI agents guide through problem-solving by asking questions — bridging the theory-application gap at <strong class="text-white">zero cost</strong> with existing enterprise AI licenses.</p>
+  <div class="grid lg:grid-cols-2 gap-8">
+    <div class="space-y-6">
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-sm font-bold flex-shrink-0">✕</span>
+            <span class="font-bold text-white">The Theory-Application Gap</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">Managers may know how to deliver a performance review in theory, but lack a safe environment to practice the high-pressure nuances of real conversations.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-300 text-sm font-bold flex-shrink-0">🤖</span>
+            <span class="font-bold text-white">Socratic AI Agents</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5">
+          <p class="text-sm text-gray-400">Socratic assistants like <a href="https://www.disco.co/blog/top-10-ai-education-tools" target="_blank" class="ext-link">Khanmigo</a> guide learners through problem-solving by asking questions rather than providing answers.</p>
+        </div>
+      </div>
+      <div class="glass overflow-hidden border-l-2 border-cyan-500/40">
+        <button class="acc-toggle w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+          <div class="flex items-center gap-3">
+            <span class="text-lg">⚡</span>
+            <span class="font-bold text-cyan-300 text-sm">Implementation: The Tough Conversation Bot</span>
+          </div>
+          <span class="chevron text-gray-500 text-sm">▼</span>
+        </button>
+        <div class="acc-body px-5 pb-5 space-y-3">
+          <p class="text-sm text-gray-400">Build a <strong class="text-white">Custom GPT</strong> as a "resistant direct report."</p>
+          <ul class="text-sm text-gray-400 space-y-2 list-none">
+            <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">→</span> Managers practice pitching policies or delivering difficult ratings against the AI.</li>
+            <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">→</span> The AI provides an <a href="https://www.techclass.com/resources/learning-and-development-articles/ai-and-employee-learning-how-adaptive-platforms-personalize-l-and-d-in-real-time" target="_blank" class="ext-link">"Empathy Score"</a> with real-time tone nudges.</li>
+            <li class="flex items-start gap-2"><span class="text-cyan-400 mt-0.5">→</span> <strong class="text-white">Budget Hack:</strong> $0 with an existing enterprise AI license.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Interactive Chat Demo -->
+    <div class="glass glow-cyan p-8 flex flex-col justify-center min-h-[400px]">
+      <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 text-center">Interactive: Simulated AI Coach</h3>
+      <div id="chatDemo" class="space-y-4 mb-6">
+        <div class="flex gap-3">
+          <div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 text-sm">🤖</div>
+          <div class="glass p-3 text-sm text-gray-300 max-w-[85%]">I'm your AI coaching partner. I'll play a resistant team member. Choose a scenario below to practice.</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-2" id="chatOptions">
+        <button onclick="simulateChat('perf')" class="text-left text-sm p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 hover:bg-cyan-500/20 transition cursor-pointer">💬 Practice: Delivering a tough performance review</button>
+        <button onclick="simulateChat('policy')" class="text-left text-sm p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 hover:bg-cyan-500/20 transition cursor-pointer">💬 Practice: Introducing an unpopular policy change</button>
+        <button onclick="simulateChat('conflict')" class="text-left text-sm p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 hover:bg-cyan-500/20 transition cursor-pointer">💬 Practice: Mediating a team conflict</button>
+      </div>
+    </div>
+  </div>
+  <div class="flow-arr mt-10"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ACTION MATRIX -->
+<!-- ============================================================ -->
+<section id="matrix" class="fade-up pb-16 scroll-mt-20">
+  <div class="flex items-center gap-4 mb-8">
+    <span class="tag bg-white/10 text-gray-300 border border-white/10">Summary</span>
+    <div class="flex-1 h-px bg-gradient-to-r from-white/20 to-transparent"></div>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-bold mb-3 text-center">The L&amp;D <span class="gt-indigo">Action Matrix</span></h2>
+  <p class="text-gray-400 max-w-2xl mx-auto text-center mb-10">Click any row to jump to the detailed strategy.</p>
+  <div class="glass overflow-hidden">
+    <div class="grid grid-cols-5 gap-4 p-5 border-b border-white/5 text-[.6rem] font-bold text-gray-500 uppercase tracking-widest">
+      <div>Learning Goal</div>
+      <div>Modern Format</div>
+      <div>Core Principle</div>
+      <div>Implementation</div>
+      <div>Budget</div>
+    </div>
+    <a href="#s1" class="grid grid-cols-5 gap-4 p-5 border-b border-white/5 matrix-row cursor-pointer block">
+      <div class="text-sm text-white font-semibold">New Hire Skills</div>
+      <div class="text-sm text-indigo-300">90-sec Vertical Reels</div>
+      <div class="text-xs text-indigo-400/70">Attention as Currency</div>
+      <div class="text-sm text-gray-400">AI-generated video from docs</div>
+      <div><span class="tag bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[.55rem]">Low</span></div>
+    </a>
+    <a href="#s2" class="grid grid-cols-5 gap-4 p-5 border-b border-white/5 matrix-row cursor-pointer block">
+      <div class="text-sm text-white font-semibold">Retention / Cert</div>
+      <div class="text-sm text-rose-300">Daily Slack SRS</div>
+      <div class="text-xs text-rose-400/70">Retrieval Over Consumption</div>
+      <div class="text-sm text-gray-400">Automated 1-min nudges</div>
+      <div><span class="tag bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[.55rem]">Zero</span></div>
+    </a>
+    <a href="#s3" class="grid grid-cols-5 gap-4 p-5 border-b border-white/5 matrix-row cursor-pointer block">
+      <div class="text-sm text-white font-semibold">Leadership Culture</div>
+      <div class="text-sm text-amber-300">10-min Podcast</div>
+      <div class="text-xs text-amber-400/70">Meet Learners Where They Are</div>
+      <div class="text-sm text-gray-400">Unscripted SME recordings</div>
+      <div><span class="tag bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[.55rem]">Low</span></div>
+    </a>
+    <a href="#s4" class="grid grid-cols-5 gap-4 p-5 border-b border-white/5 matrix-row cursor-pointer block">
+      <div class="text-sm text-white font-semibold">Program Completion</div>
+      <div class="text-sm text-violet-300">2-Week Peer Sprints</div>
+      <div class="text-xs text-violet-400/70">Social Accountability</div>
+      <div class="text-sm text-gray-400">Cohort Slack groups</div>
+      <div><span class="tag bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[.55rem]">Zero</span></div>
+    </a>
+    <a href="#s5" class="grid grid-cols-5 gap-4 p-5 matrix-row cursor-pointer block">
+      <div class="text-sm text-white font-semibold">Soft-Skills Mastery</div>
+      <div class="text-sm text-cyan-300">Custom GPT Coach</div>
+      <div class="text-xs text-cyan-400/70">Desirable Difficulty</div>
+      <div class="text-sm text-gray-400">AI-driven roleplay sims</div>
+      <div><span class="tag bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[.55rem]">Zero</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PRINCIPLE RECAP BANNER -->
+<!-- ============================================================ -->
+<section class="fade-up pb-16">
+  <div class="glass p-10 md:p-14 text-center glow-emerald">
+    <div class="tag bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 mx-auto mb-6 w-fit">The Complete Framework</div>
+    <h2 class="text-3xl md:text-4xl font-black mb-6">
+      Five Principles. Five Strategies.<br><span class="gt-emerald">One Cognitive Architecture.</span>
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 max-w-4xl mx-auto mb-8">
+      <a href="#principles" class="glass p-5 text-center hover:bg-indigo-500/5 transition cursor-pointer block rounded-xl border-t-2 border-indigo-500/30">
+        <div class="text-xl mb-2">⚡</div>
+        <div class="text-xs font-bold text-indigo-300 mb-1">Principle 1</div>
+        <div class="text-[.6rem] text-gray-500 leading-tight">Attention as Currency</div>
+        <div class="text-[.55rem] text-gray-600 mt-2">→ Nano-Learning</div>
+      </a>
+      <a href="#principles" class="glass p-5 text-center hover:bg-rose-500/5 transition cursor-pointer block rounded-xl border-t-2 border-rose-500/30">
+        <div class="text-xl mb-2">🧠</div>
+        <div class="text-xs font-bold text-rose-300 mb-1">Principle 2</div>
+        <div class="text-[.6rem] text-gray-500 leading-tight">Retrieval Over Consumption</div>
+        <div class="text-[.55rem] text-gray-600 mt-2">→ Spaced Repetition</div>
+      </a>
+      <a href="#principles" class="glass p-5 text-center hover:bg-amber-500/5 transition cursor-pointer block rounded-xl border-t-2 border-amber-500/30">
+        <div class="text-xl mb-2">🎧</div>
+        <div class="text-xs font-bold text-amber-300 mb-1">Principle 3</div>
+        <div class="text-[.6rem] text-gray-500 leading-tight">Meet Learners Where They Are</div>
+        <div class="text-[.55rem] text-gray-600 mt-2">→ Audio-First</div>
+      </a>
+      <a href="#principles" class="glass p-5 text-center hover:bg-violet-500/5 transition cursor-pointer block rounded-xl border-t-2 border-violet-500/30">
+        <div class="text-xl mb-2">👥</div>
+        <div class="text-xs font-bold text-violet-300 mb-1">Principle 4</div>
+        <div class="text-[.6rem] text-gray-500 leading-tight">Social Accountability</div>
+        <div class="text-[.55rem] text-gray-600 mt-2">→ Cohort Sprints</div>
+      </a>
+      <a href="#principles" class="glass p-5 text-center hover:bg-cyan-500/5 transition cursor-pointer block rounded-xl border-t-2 border-cyan-500/30">
+        <div class="text-xl mb-2">🔥</div>
+        <div class="text-xs font-bold text-cyan-300 mb-1">Principle 5</div>
+        <div class="text-[.6rem] text-gray-500 leading-tight">Desirable Difficulty</div>
+        <div class="text-[.55rem] text-gray-600 mt-2">→ AI Coaching</div>
+      </a>
+    </div>
+    <p class="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
+      We must stop delivering content and start designing <strong class="text-white">cognitive environments</strong>. The "struggle" of recall, the pressure of peer interaction, the discomfort of productive failure — that friction is exactly where the cognitive change occurs.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SOURCES -->
+<!-- ============================================================ -->
+<section class="fade-up pb-8">
+  <div class="glass p-6">
+    <button class="acc-toggle w-full flex items-center justify-between text-left" onclick="toggleAcc(this)">
+      <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Works Cited &amp; Sources</span>
+      <span class="chevron text-gray-500 text-sm">▼</span>
+    </button>
+    <div class="acc-body pt-4 space-y-2">
+      <p class="text-xs text-gray-500"><a href="https://sgu.ac.id/the-decline-of-attention-span-in-the-digital-era/" target="_blank" class="ext-link">The Decline of Attention Span in the Digital Era — SGU</a></p>
+      <p class="text-xs text-gray-500"><a href="https://www.5mins.ai/resources/blog/nano-learning-vs-microlearning-whats-the-difference" target="_blank" class="ext-link">Nano-Learning vs. Microlearning — 5Mins.ai</a></p>
+      <p class="text-xs text-gray-500"><a href="https://www.x-pilot.ai/blog/microlearning-video-creation-guide-corporate-training-2026" target="_blank" class="ext-link">Microlearning Video Creation Guide — X-Pilot</a></p>
+      <p class="text-xs text-gray-500"><a href="https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition" target="_blank" class="ext-link">Spaced Repetition — Birmingham City University</a></p>
+      <p class="text-xs text-gray-500"><a href="https://edurev.in/t/478733/Active-Recall-and-Spaced-Repetition" target="_blank" class="ext-link">Active Recall and Spaced Repetition — EduRev</a></p>
+      <p class="text-xs text-gray-500"><a href="https://riverside.com/blog/podcast-statistics" target="_blank" class="ext-link">Podcast Statistics — Riverside</a></p>
+      <p class="text-xs text-gray-500"><a href="https://contentallies.com/learn/top-enterprise-podcast-solutions" target="_blank" class="ext-link">Enterprise Podcast Solutions — Content Allies</a></p>
+      <p class="text-xs text-gray-500"><a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank" class="ext-link">Social Media Attention Span Statistics — SQ Magazine</a></p>
+      <p class="text-xs text-gray-500"><a href="https://360learning.com/blog/corporate-learning-strategy/" target="_blank" class="ext-link">Corporate Learning Strategy — 360Learning</a></p>
+      <p class="text-xs text-gray-500"><a href="https://www.disco.co/blog/top-10-ai-education-tools" target="_blank" class="ext-link">Top 10 AI Education Tools — Disco</a></p>
+      <p class="text-xs text-gray-500"><a href="https://www.techclass.com/resources/learning-and-development-articles/ai-and-employee-learning-how-adaptive-platforms-personalize-l-and-d-in-real-time" target="_blank" class="ext-link">AI and Employee Learning — TechClass</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="py-12 px-6 border-t border-white/5 text-center">
+  <p class="text-gray-600 text-xs">The Actionable L&amp;D Playbook — Architecting the Modern Learner Experience</p>
+</footer>
+
+<script>
+// ===== Chart.js =====
+Chart.defaults.color='#64748b';Chart.defaults.font.family='Inter';
+Chart.defaults.plugins.legend.labels.usePointStyle=true;Chart.defaults.plugins.legend.labels.pointStyle='circle';
+const grid={color:'rgba(255,255,255,.04)'};const border={color:'rgba(255,255,255,.08)'};
+const ttip={backgroundColor:'rgba(8,7,15,.95)',borderColor:'rgba(255,255,255,.08)',borderWidth:1,titleColor:'#fff',bodyColor:'#94a3b8',padding:12,cornerRadius:10};
+
+window.addEventListener('load',()=>{
+  new Chart(document.getElementById('chart1'),{
+    type:'bar',data:{labels:['Long-Form Modules','Nano-Learning (<120s)'],datasets:[{label:'Completion Rate %',data:[20,95],backgroundColor:['rgba(255,255,255,.08)','rgba(99,102,241,.5)'],borderColor:['rgba(255,255,255,.15)','#6366f1'],borderWidth:1,borderRadius:10}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{tooltip:ttip,legend:{display:false}},scales:{x:{beginAtZero:true,max:100,grid,border,title:{display:true,text:'Completion %',color:'#475569'}},y:{grid:{display:false},border}}}
+  });
+  new Chart(document.getElementById('chart2'),{
+    type:'line',data:{labels:['Day 1','Day 3','Day 7','Day 14','Day 30'],datasets:[
+      {label:'No Reinforcement',data:[100,50,30,15,5],borderColor:'#f43f5e',backgroundColor:'rgba(244,63,94,.04)',fill:true,tension:.4,borderWidth:3,pointBackgroundColor:'#f43f5e',pointRadius:5},
+      {label:'With SRS',data:[100,88,82,90,92],borderColor:'#818cf8',backgroundColor:'rgba(129,140,248,.04)',fill:true,tension:.4,borderWidth:3,pointBackgroundColor:'#818cf8',pointRadius:5}
+    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{tooltip:ttip,legend:{position:'bottom',labels:{padding:16}}},scales:{y:{beginAtZero:true,max:100,grid,border,title:{display:true,text:'Retention %',color:'#475569'}},x:{grid,border}}}
+  });
+  new Chart(document.getElementById('chart4'),{
+    type:'doughnut',data:{labels:['Self-Paced Completed','Self-Paced Drop-off','Cohort Completed','Cohort Drop-off'],datasets:[
+      {data:[10,90],backgroundColor:['#f43f5e','rgba(255,255,255,.03)'],borderWidth:0},
+      {data:[85,15],backgroundColor:['#8b5cf6','rgba(255,255,255,.03)'],borderWidth:0}
+    ]},options:{responsive:true,maintainAspectRatio:false,cutout:'50%',plugins:{tooltip:ttip,legend:{position:'right',labels:{padding:10,font:{size:11}}}}}
+  });
+});
+
+// ===== Accordion =====
+function toggleAcc(btn){
+  const body=btn.nextElementSibling;const isOpen=body.classList.contains('open');
+  // Close siblings in same parent container
+  const parent=btn.closest('section')||btn.closest('.glass');
+  if(parent){parent.querySelectorAll('.acc-body.open').forEach(b=>{b.style.maxHeight='0px';b.classList.remove('open');b.previousElementSibling.classList.remove('active')})}
+  if(!isOpen){body.style.maxHeight=body.scrollHeight+'px';body.classList.add('open');btn.classList.add('active')}
+}
+
+// ===== Principle Toggle =====
+function togglePrinciple(card){
+  const detail=card.querySelector('.principle-detail');
+  const isExpanded=detail.classList.contains('expanded');
+  // Close all others
+  document.querySelectorAll('.principle-detail.expanded').forEach(d=>{d.style.maxHeight='0px';d.classList.remove('expanded')});
+  if(!isExpanded){detail.style.maxHeight=detail.scrollHeight+'px';detail.classList.add('expanded')}
+}
+
+// ===== Scroll Fade =====
+const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('vis')}),{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// ===== Chat Demo =====
+const chatResponses={
+  perf:[
+    {role:'user',text:"I need to tell Alex their performance is below expectations this quarter."},
+    {role:'ai',text:"Before we start, what specific behaviors or outcomes have you documented? Let's ground this in evidence, not feeling."},
+    {role:'user',text:"They've missed 3 project deadlines and their code review quality dropped."},
+    {role:'ai',text:"Good — specifics matter. Now, how do you think Alex would describe their own quarter? Starting with their perspective builds psychological safety. Try opening with a question, not a statement."},
+    {role:'score',text:"Empathy Score: 7/10 — Strong on specifics. Consider asking about barriers before drawing conclusions."}
+  ],
+  policy:[
+    {role:'user',text:"The team now needs to be in-office 3 days a week starting next month."},
+    {role:'ai',text:"I'm not happy about this. I was hired as remote. Why wasn't the team consulted?"},
+    {role:'user',text:"I understand your frustration. The decision came from leadership, but I want to hear your concerns."},
+    {role:'ai',text:"That's a good acknowledgment. But what's YOUR stance? Teams read through managers who just blame leadership. Can you articulate one genuine benefit you believe in?"},
+    {role:'score',text:"Empathy Score: 8/10 — Excellent active listening. Add personal conviction to build trust."}
+  ],
+  conflict:[
+    {role:'user',text:"Sam and Jordan aren't communicating well on the shared project."},
+    {role:'ai',text:"Have you spoken to each person individually first, or are you planning to bring them together immediately?"},
+    {role:'user',text:"I was going to have a joint meeting."},
+    {role:'ai',text:"Consider 1:1 conversations first. Each person needs to feel heard privately before a joint discussion. What specific behaviors have you observed — not what others reported?"},
+    {role:'score',text:"Empathy Score: 6/10 — Good intent, but gather individual perspectives before group mediation."}
+  ]
+};
+function simulateChat(type){
+  const demo=document.getElementById('chatDemo');const opts=document.getElementById('chatOptions');
+  opts.style.display='none';const msgs=chatResponses[type];let i=0;
+  function addMsg(){
+    if(i>=msgs.length)return;const m=msgs[i];const div=document.createElement('div');
+    div.className='flex gap-3'+(m.role==='user'?' justify-end':'');
+    if(m.role==='score')div.innerHTML=`<div class="w-full p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-center"><div class="text-sm font-bold text-cyan-300 mb-1">AI Feedback</div><div class="text-xs text-gray-400">${m.text}</div></div>`;
+    else if(m.role==='ai')div.innerHTML=`<div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 text-sm">🤖</div><div class="glass p-3 text-sm text-gray-300 max-w-[85%]">${m.text}</div>`;
+    else div.innerHTML=`<div class="glass p-3 text-sm text-indigo-300 max-w-[85%] bg-indigo-500/10 border-indigo-500/20">${m.text}</div><div class="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0 text-sm">👤</div>`;
+    div.style.opacity='0';div.style.transform='translateY(10px)';demo.appendChild(div);
+    requestAnimationFrame(()=>{div.style.transition='all .4s ease';div.style.opacity='1';div.style.transform='translateY(0)'});
+    i++;if(i<msgs.length)setTimeout(addMsg,1200);
+    else setTimeout(()=>{
+      const reset=document.createElement('button');
+      reset.className='mt-4 text-xs text-cyan-400 underline underline-offset-2 w-full text-center hover:text-cyan-300 transition cursor-pointer';
+      reset.textContent='↻ Try another scenario';
+      reset.onclick=()=>{demo.innerHTML=`<div class="flex gap-3"><div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0 text-sm">🤖</div><div class="glass p-3 text-sm text-gray-300 max-w-[85%]">Choose another scenario to practice.</div></div>`;opts.style.display='grid'};
+      demo.appendChild(reset)},600);
+  }
+  addMsg();
+}
+
+// ===== Modal =====
+const modalData={
+  stat1:{title:'47-Second Attention Span',color:'rose',body:'<p class="text-sm text-gray-400 mb-4">Research indicates the average digital attention span has plummeted to <strong class="text-white">47 seconds</strong>. For Gen Z, focused attention per post averages just 6.5 seconds.</p><p class="text-sm text-gray-400 mb-4">This means L&D must capture value in the first moments — or lose the learner entirely.</p><p class="text-sm text-gray-400"><strong class="text-white">Core Principle:</strong> Attention is Currency — every second of content must earn the next second.</p><p class="text-xs text-gray-600 mt-4">Source: <a href="https://sgu.ac.id/the-decline-of-attention-span-in-the-digital-era/" target="_blank" class="ext-link">SGU Research</a></p>'},
+  stat2:{title:'95%+ Nano Completion Rate',color:'indigo',body:'<p class="text-sm text-gray-400 mb-4">Platforms using nano-learning (&lt;120s modules) achieve <strong class="text-white">95%+ completion</strong> vs. the <strong class="text-rose-400">20% standard</strong> for long-form modules — a 4.75x improvement.</p><p class="text-sm text-gray-400"><strong class="text-white">Core Principle:</strong> Single-objective capsules that respect the 10-Second Rule.</p><p class="text-xs text-gray-600 mt-4">Source: <a href="https://www.5mins.ai/resources/blog/nano-learning-vs-microlearning-whats-the-difference" target="_blank" class="ext-link">5Mins.ai</a></p>'},
+  stat3:{title:'200–400% SRS Retention Boost',color:'amber',body:'<p class="text-sm text-gray-400 mb-4">Spaced Repetition Systems increase long-term retention by <strong class="text-white">200–400%</strong> compared to traditional study.</p><p class="text-sm text-gray-400 mb-4"><strong class="text-white">Core Principle:</strong> Retrieval Beats Consumption — active recall at spaced intervals turns the forgetting curve into a reinforcement curve.</p><p class="text-xs text-gray-600 mt-4">Source: <a href="https://edurev.in/t/478733/Active-Recall-and-Spaced-Repetition" target="_blank" class="ext-link">EduRev</a></p>'},
+  stat4:{title:'85% Cohort Completion Rate',color:'violet',body:'<p class="text-sm text-gray-400 mb-4">Cohort-Based Learning drives completion to <strong class="text-white">85%</strong> vs. <strong class="text-rose-400">5–15%</strong> for self-paced courses. Peer teaching boosts retention to 90%.</p><p class="text-sm text-gray-400"><strong class="text-white">Core Principle:</strong> Learning is Social — isolation kills completion, peer accountability sustains it.</p><p class="text-xs text-gray-600 mt-4">Source: <a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank" class="ext-link">SQ Magazine</a></p>'},
+  stat5:{title:'$0 AI Coach Implementation',color:'cyan',body:'<p class="text-sm text-gray-400 mb-4">A Custom GPT Socratic coach costs <strong class="text-white">$0</strong> with an existing enterprise AI license — the most budget-efficient strategy in the playbook.</p><p class="text-sm text-gray-400"><strong class="text-white">Core Principle:</strong> Desirable Difficulty — the struggle of AI roleplay is exactly where cognitive change occurs.</p><p class="text-xs text-gray-600 mt-4">Source: <a href="https://www.disco.co/blog/top-10-ai-education-tools" target="_blank" class="ext-link">Disco.co</a></p>'}
+};
+const colorMap={rose:'gt-rose',indigo:'gt-indigo',amber:'gt-amber',violet:'gt-violet',cyan:'gt-cyan'};
+function openModal(key){const d=modalData[key];if(!d)return;document.getElementById('modalBody').innerHTML=`<h3 class="text-2xl font-bold mb-4"><span class="${colorMap[d.color]}">${d.title}</span></h3>${d.body}`;document.getElementById('modal').classList.add('show')}
+function closeModal(e){if(e.target===e.currentTarget)e.currentTarget.classList.remove('show')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('modal').classList.remove('show')});
+</script>
+</body>
+</html>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
