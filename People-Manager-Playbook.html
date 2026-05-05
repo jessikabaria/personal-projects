@@ -1,0 +1,1505 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<style>
+								body {
+									background-color: white; /* Ensure the iframe has a white background */
+								}
+
+								
+							</style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okta India — People Manager Playbook</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bd:#1A31A9;--bm:#3F59E4;--bl:#B6C9FF;
+  --gd:#096256;--gm:#4CB7A3;--gl:#B1E4DE;
+  --bd2:#E8DCC7;--bl2:#F6F1E7;
+  --ink:#0D1117;--inkm:#374151;--inkl:#6B7280;
+  --wh:#fff;--rule:#E5E7EB;--surf:#FAFAF8;
+  --red:#DC2626;--redbg:#FEF2F2;
+  --amber:#D97706;--amberbg:#FFFBEB;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:#F0EBE0;color:var(--ink);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── HERO ── */
+.hero{
+  background:var(--bd);
+  position:relative;overflow:hidden;
+  padding:76px 48px 68px;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 55% 90% at 95% 50%,rgba(63,89,228,.45) 0%,transparent 70%),
+    radial-gradient(ellipse 35% 55% at 5% 90%,rgba(9,98,86,.4) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:center;
+}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:40px}.hero-right{display:none}}
+.hero-kicker{
+  font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gm);margin-bottom:18px;
+  display:flex;align-items:center;gap:8px;
+}
+.hero-kicker-line{width:28px;height:1px;background:var(--gm);opacity:.6}
+.hero h1{
+  font-size:clamp(26px,4vw,46px);font-weight:800;color:var(--wh);
+  line-height:1.1;letter-spacing:-1px;margin-bottom:16px;
+}
+.hero h1 em{font-style:normal;color:var(--gl)}
+.hero-desc{
+  font-size:14.5px;color:rgba(182,201,255,.82);
+  max-width:520px;line-height:1.75;margin-bottom:28px;
+}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap}
+.hero-meta-item{display:flex;flex-direction:column;gap:2px}
+.hero-meta-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--bl);opacity:.7}
+.hero-meta-val{font-size:13.5px;font-weight:700;color:var(--wh)}
+
+/* Hero accountability card */
+.ha-card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:18px;padding:28px;backdrop-filter:blur(10px);
+}
+.ha-card-title{
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gl);margin-bottom:18px;
+  padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.ha-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.ha-item:last-child{border-bottom:none;padding-bottom:0}
+.ha-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;
+}
+.ha-text{font-size:13px;font-weight:500;color:rgba(255,255,255,.85)}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:400;
+  background:var(--wh);
+  border-bottom:1px solid var(--rule);
+  box-shadow:0 2px 16px rgba(26,49,169,.07);
+}
+.nav-inner{
+  max-width:1100px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:2px;
+  overflow-x:auto;scrollbar-width:none;height:52px;
+}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-logo{
+  display:flex;align-items:center;gap:9px;
+  margin-right:14px;flex-shrink:0;padding-right:14px;
+  border-right:1px solid var(--rule);
+}
+.nav-logo-circle{
+  width:26px;height:26px;border-radius:50%;
+  background:var(--bd);
+  display:flex;align-items:center;justify-content:center;
+}
+.nav-logo-circle svg{width:14px;height:14px}
+.nav-logo-name{font-size:12.5px;font-weight:800;color:var(--bd);letter-spacing:-.2px}
+.nb{
+  flex-shrink:0;background:none;border:none;
+  padding:7px 13px;border-radius:7px;
+  font-size:12px;font-weight:600;color:var(--inkl);
+  cursor:pointer;white-space:nowrap;transition:all .15s;
+}
+.nb:hover{background:var(--bl2);color:var(--bd)}
+.nb.active{background:var(--bd);color:var(--wh)}
+
+/* ── PAGE ── */
+.page{max-width:1100px;margin:0 auto;padding:44px 24px 100px}
+.panel{display:none;animation:rise .25s ease both}
+.panel.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION HEADER ── */
+.shdr{
+  display:flex;align-items:flex-start;gap:16px;
+  margin-bottom:34px;padding-bottom:26px;
+  border-bottom:1px solid var(--rule);
+}
+.shdr-icon{
+  width:48px;height:48px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.shdr-icon svg{width:22px;height:22px}
+.shdr-text h2{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.4px;margin-bottom:5px}
+.shdr-text p{font-size:13.5px;color:var(--inkl);max-width:660px;line-height:1.65}
+
+/* ── SECTION LABEL ── */
+.sl{
+  font-size:10.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.8px;color:var(--bd);
+  margin:36px 0 14px;display:flex;align-items:center;gap:10px;
+}
+.sl::after{content:'';flex:1;height:1px;background:var(--rule)}
+
+/* ── GRIDS ── */
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+
+/* ── CARDS ── */
+.card{
+  background:var(--wh);border-radius:14px;
+  border:1px solid var(--rule);padding:22px 24px;
+  transition:box-shadow .2s,transform .2s;
+}
+.card:hover{box-shadow:0 8px 32px rgba(26,49,169,.08);transform:translateY(-2px)}
+.c-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--inkl);margin-bottom:6px}
+.c-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.card p{font-size:13px;color:var(--inkm);line-height:1.65}
+.card ul{padding-left:17px}
+.card li{font-size:13px;color:var(--inkm);line-height:1.65;margin-bottom:4px}
+.card li:last-child{margin-bottom:0}
+.card strong{color:var(--ink);font-weight:600}
+/* Borders */
+.cbl{border-top:3px solid var(--bm)}
+.cgr{border-top:3px solid var(--gm)}
+.cteal{border-top:3px solid var(--gd)}
+.cbg{border-top:3px solid var(--bd2)}
+.crd{border-top:3px solid var(--red)}
+/* Filled */
+.cdark{background:var(--bd);border-color:var(--bd)}
+.cdark .c-lbl{color:var(--bl)}
+.cdark .c-title,.cdark p,.cdark li{color:rgba(255,255,255,.85)}
+.cdark strong{color:var(--wh)}
+.cgdark{background:var(--gd);border-color:var(--gd)}
+.cgdark .c-lbl{color:var(--gl)}
+.cgdark .c-title,.cgdark p,.cgdark li{color:rgba(255,255,255,.85)}
+.cgdark strong{color:var(--wh)}
+
+/* ── CALLOUTS ── */
+.callout{
+  display:flex;gap:14px;padding:15px 19px;
+  border-radius:11px;margin:18px 0;
+  font-size:13px;color:var(--inkm);line-height:1.65;
+}
+.cbr{width:3px;border-radius:2px;flex-shrink:0;align-self:stretch}
+.co-blue{background:#EEF2FF}.co-blue .cbr{background:var(--bm)}
+.co-grn{background:#ECFDF5}.co-grn .cbr{background:var(--gm)}
+.co-warn{background:var(--amberbg)}.co-warn .cbr{background:var(--amber)}
+.co-alert{background:var(--redbg)}.co-alert .cbr{background:var(--red)}
+.callout strong{color:var(--ink);font-weight:700;display:block;margin-bottom:2px;font-size:13.5px}
+
+/* ── TABLES ── */
+.tw{overflow-x:auto;border-radius:12px;border:1px solid var(--rule);margin:14px 0}
+table{width:100%;border-collapse:collapse}
+thead tr{background:var(--bd)}
+thead th{padding:12px 16px;font-size:11px;font-weight:700;color:var(--wh);text-align:left;text-transform:uppercase;letter-spacing:.9px;white-space:nowrap}
+tbody tr:nth-child(odd){background:var(--wh)}
+tbody tr:nth-child(even){background:var(--surf)}
+tbody tr{transition:background .12s}
+tbody tr:hover{background:#EEF2FF}
+tbody td{padding:11px 16px;font-size:13px;color:var(--inkm);border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.55}
+tbody tr:last-child td{border-bottom:none}
+.tdk{font-weight:700;color:var(--bd);white-space:nowrap}
+.tdno{color:#B91C1C;font-weight:600}
+.tdyes{color:var(--gd);font-weight:600}
+
+/* ── ACCORDION ── */
+.acc-item{margin-bottom:7px}
+.acc-btn{
+  width:100%;background:var(--wh);border:1px solid var(--rule);
+  border-radius:10px;padding:14px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink);
+  text-align:left;transition:all .15s;gap:12px;
+}
+.acc-btn:hover{background:var(--bl2);border-color:var(--bd2)}
+.acc-btn.open{background:var(--bd);color:var(--wh);border-color:var(--bd);border-radius:10px 10px 0 0}
+.ach{width:18px;height:18px;flex-shrink:0;transition:transform .2s}
+.acc-btn.open .ach{transform:rotate(180deg)}
+.acc-body{display:none;border:1px solid var(--rule);border-top:none;border-radius:0 0 10px 10px;padding:20px;background:var(--wh)}
+.acc-body.open{display:block}
+.acc-body p,.acc-body li{font-size:13px;color:var(--inkm);line-height:1.65}
+.acc-body ul{padding-left:18px;margin-top:8px}
+.acc-body li{margin-bottom:4px}
+.acc-body strong{color:var(--ink);font-weight:600}
+
+/* ── DO/DON'T ── */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:16px 0}
+@media(max-width:560px){.dd{grid-template-columns:1fr}}
+.do-c{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:20px}
+.dn-c{background:var(--redbg);border:1px solid #FECACA;border-radius:12px;padding:20px}
+.do-c h4{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#15803D;margin-bottom:12px}
+.dn-c h4{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#B91C1C;margin-bottom:12px}
+.do-c li,.dn-c li{font-size:13px;color:var(--inkm);line-height:1.65;margin-bottom:4px}
+.do-c ul,.dn-c ul{padding-left:18px}
+
+/* ── TIMELINE ── */
+.tl{padding-left:24px;border-left:2px solid var(--bl);margin:6px 0}
+.tl-item{position:relative;padding:0 0 20px 20px}
+.tl-item::before{content:'';position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--bm);border:2px solid var(--wh);outline:2px solid var(--bm)}
+.tl-item:last-child{padding-bottom:0}
+.tl-item h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.tl-item p{font-size:13px;color:var(--inkm);line-height:1.55}
+
+/* ── CONTACT CARD ── */
+.cc{background:var(--wh);border:1px solid var(--rule);border-radius:12px;padding:15px 18px;display:flex;align-items:center;gap:13px;transition:box-shadow .18s}
+.cc:hover{box-shadow:0 4px 18px rgba(26,49,169,.09)}
+.cav{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;color:var(--wh);flex-shrink:0}
+.cn{font-size:13.5px;font-weight:700;color:var(--ink)}
+.cr{font-size:12px;color:var(--inkl);margin-top:1px}
+
+/* ── PILL ── */
+.pill{display:inline-block;padding:3px 11px;border-radius:20px;font-size:11px;font-weight:600;margin:2px 2px 2px 0;letter-spacing:.2px}
+.p-bl{background:#DBEAFE;color:#1E40AF}
+.p-gr{background:var(--gl);color:var(--gd)}
+.p-bg{background:var(--bd2);color:#5C4A1E}
+
+/* ── BADGE ── */
+.badge{display:inline-block;padding:3px 9px;border-radius:5px;font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.bg-urgent{background:#FEE2E2;color:#991B1B}
+.bg-plan{background:var(--gl);color:var(--gd)}
+.bg-std{background:var(--bd2);color:#5C4A1E}
+
+/* ── GLOSSARY ── */
+.glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:11px;margin:12px 0}
+.g-item{background:var(--wh);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.g-term{font-size:16px;font-weight:800;color:var(--bm);margin-bottom:4px}
+.g-def{font-size:12px;color:var(--inkm);line-height:1.5}
+
+/* ════════════════════════════
+   DIAGRAM COMPONENTS
+════════════════════════════ */
+
+/* OAR - horizontal strip */
+.oar-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.06);
+  margin:14px 0;
+}
+@media(max-width:600px){.oar-strip{grid-template-columns:1fr}}
+.oar-col{padding:28px 22px;position:relative;overflow:hidden}
+.oar-col:nth-child(1){background:var(--bd)}
+.oar-col:nth-child(2){background:var(--bm)}
+.oar-col:nth-child(3){background:var(--gd)}
+.oar-col+.oar-col{border-left:1px solid rgba(255,255,255,.1)}
+@media(max-width:600px){.oar-col+.oar-col{border-left:none;border-top:1px solid rgba(255,255,255,.1)}}
+.oar-bg-letter{
+  position:absolute;right:-8px;bottom:-16px;
+  font-size:90px;font-weight:900;color:rgba(255,255,255,.07);
+  line-height:1;pointer-events:none;user-select:none;
+}
+.oar-word{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.oar-heading{font-size:19px;font-weight:800;color:var(--wh);margin-bottom:10px}
+.oar-body p,.oar-body li{font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.6}
+.oar-body ul{padding-left:16px}
+.oar-body li{margin-bottom:4px}
+.oar-manager{
+  margin-top:12px;padding:10px 14px;
+  background:rgba(255,255,255,.1);border-radius:8px;border-left:2px solid rgba(255,255,255,.3);
+}
+.oar-manager-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.55);margin-bottom:3px}
+.oar-manager p{font-size:12px;color:rgba(255,255,255,.8);line-height:1.5}
+
+/* REVIEW CYCLE */
+.rc-wrap{
+  display:grid;grid-template-columns:1fr 56px 1fr;
+  gap:0;border-radius:16px;overflow:hidden;border:1px solid var(--rule);margin:14px 0;
+  background:var(--wh);
+}
+@media(max-width:620px){.rc-wrap{grid-template-columns:1fr;display:block;border-radius:16px;overflow:hidden}}
+.rc-half{padding:28px 26px}
+.rc-half:first-child{border-right:1px solid var(--rule)}
+.rc-middle{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--bl2);border-right:1px solid var(--rule);
+}
+@media(max-width:620px){.rc-half:first-child{border-right:none;border-bottom:1px solid var(--rule)}.rc-middle{display:none}}
+.rc-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:5px 14px 5px 10px;border-radius:20px;
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  margin-bottom:14px;
+}
+.rc-tag.h1{background:#DBEAFE;color:var(--bd)}
+.rc-tag.h2{background:var(--gl);color:var(--gd)}
+.rc-tag-dot{width:7px;height:7px;border-radius:50%}
+.rc-head{font-size:19px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.rc-sub{font-size:12px;color:var(--inkl);margin-bottom:14px}
+.rc-half ul{padding-left:18px}
+.rc-half li{font-size:13px;color:var(--inkm);margin-bottom:5px;line-height:1.55}
+
+/* PROMOTION PILLARS */
+.pillar-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-radius:16px;overflow:hidden;border:1px solid var(--rule);
+  margin:14px 0;background:var(--wh);
+}
+@media(max-width:600px){.pillar-row{grid-template-columns:1fr}}
+.pillar{padding:26px 22px;text-align:center;border-right:1px solid var(--rule);position:relative}
+.pillar:last-child{border-right:none}
+@media(max-width:600px){.pillar{border-right:none;border-bottom:1px solid var(--rule)}.pillar:last-child{border-bottom:none}}
+.pillar-num{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800;margin:0 auto 14px;
+}
+.pillar:nth-child(1) .pillar-num{background:#DBEAFE;color:var(--bd)}
+.pillar:nth-child(2) .pillar-num{background:var(--gl);color:var(--gd)}
+.pillar:nth-child(3) .pillar-num{background:var(--bd2);color:#5C4A1E}
+.pillar-title{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:9px}
+.pillar p{font-size:12.5px;color:var(--inkm);line-height:1.6}
+.pillar-req{
+  margin-top:12px;display:inline-block;
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  padding:3px 10px;border-radius:20px;
+}
+.pillar:nth-child(1) .pillar-req{background:#DBEAFE;color:var(--bd)}
+.pillar:nth-child(2) .pillar-req{background:var(--gl);color:var(--gd)}
+.pillar:nth-child(3) .pillar-req{background:var(--bd2);color:#5C4A1E}
+
+/* DECISION MATRIX */
+.dm{background:var(--wh);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin:14px 0}
+.dm-hd{display:grid;grid-template-columns:1.1fr 1.2fr 1.2fr;background:var(--bd)}
+.dm-hd-cell{padding:12px 16px;font-size:11px;font-weight:700;color:var(--wh);text-transform:uppercase;letter-spacing:.9px}
+.dm-row{display:grid;grid-template-columns:1.1fr 1.2fr 1.2fr;border-top:1px solid var(--rule);transition:background .12s}
+.dm-row:hover{background:#EEF2FF}
+.dm-row:nth-child(even){background:var(--surf)}
+.dm-cell{padding:13px 16px;font-size:13px;color:var(--inkm);line-height:1.55;border-right:1px solid var(--rule)}
+.dm-cell:last-child{border-right:none}
+.dm-key{font-weight:700;color:var(--bd)}
+@media(max-width:600px){.dm-hd,.dm-row{grid-template-columns:1fr}.dm-cell{border-right:none;border-bottom:1px solid var(--rule)}}
+
+/* 90-DAY TRACK */
+.dt{display:grid;grid-template-columns:repeat(4,1fr);border-radius:16px;overflow:hidden;border:1px solid var(--rule);margin:14px 0}
+@media(max-width:680px){.dt{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.dt{grid-template-columns:1fr}}
+.db{padding:22px 18px;border-right:1px solid rgba(255,255,255,.1)}
+.db:last-child{border-right:none}
+.db-phase{font-size:9.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:5px}
+.db-range{font-size:20px;font-weight:800;margin-bottom:12px}
+.db ul{padding-left:15px}
+.db li{font-size:12.5px;margin-bottom:4px;line-height:1.55}
+.dp{background:var(--bd)}.dp .db-phase{color:var(--bl)}.dp .db-range{color:var(--wh)}.dp li{color:rgba(255,255,255,.8)}
+.d30{background:#EEF2FF;border-right-color:var(--rule)!important}.d30 .db-phase{color:var(--bm)}.d30 .db-range{color:var(--bd)}.d30 li{color:var(--inkm)}
+.d60{background:var(--gl);border-right-color:var(--rule)!important}.d60 .db-phase{color:var(--gd)}.d60 .db-range{color:var(--gd)}.d60 li{color:var(--gd)}
+.d90{background:var(--bd2);border-right-color:transparent!important}.d90 .db-phase{color:#7A5C2A}.d90 .db-range{color:var(--ink)}.d90 li{color:var(--inkm)}
+
+/* TZ BARS */
+.tz-wrap{background:var(--wh);border:1px solid var(--rule);border-radius:14px;padding:26px}
+.tz-row{display:flex;align-items:center;gap:14px;margin-bottom:13px}
+.tz-row:last-child{margin-bottom:0}
+.tz-lbl{font-size:12px;font-weight:700;color:var(--ink);width:95px;flex-shrink:0}
+.tz-track{flex:1;height:30px;background:var(--bl2);border-radius:7px;position:relative;overflow:hidden;border:1px solid var(--bd2)}
+.tz-fill{position:absolute;top:0;height:100%;border-radius:6px;display:flex;align-items:center;padding:0 12px}
+.tz-fill span{font-size:11px;font-weight:600;color:var(--wh);white-space:nowrap}
+.tz-time{font-size:11.5px;color:var(--inkl);font-weight:600;width:72px;flex-shrink:0;text-align:right}
+
+/* COMP TRIO */
+.comp-trio{display:grid;grid-template-columns:repeat(3,1fr);border-radius:16px;overflow:hidden;border:1px solid var(--rule);margin:14px 0}
+@media(max-width:600px){.comp-trio{grid-template-columns:1fr}}
+.ct-cell{padding:26px 22px;border-right:1px solid var(--rule)}
+.ct-cell:last-child{border-right:none}
+@media(max-width:600px){.ct-cell{border-right:none;border-bottom:1px solid var(--rule)}.ct-cell:last-child{border-bottom:none}}
+.ct-cell:nth-child(1){background:var(--bd)}
+.ct-cell:nth-child(2){background:var(--bm);border-right-color:rgba(255,255,255,.15)}
+.ct-cell:nth-child(3){background:var(--gd)}
+.ct-tag{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.55);margin-bottom:6px}
+.ct-name{font-size:17px;font-weight:800;color:var(--wh);margin-bottom:8px}
+.ct-cell p{font-size:12.5px;color:rgba(255,255,255,.78);line-height:1.6}
+.ct-note{margin-top:12px;padding:8px 12px;background:rgba(255,255,255,.1);border-radius:8px;font-size:12px;color:rgba(255,255,255,.8)}
+
+/* ESCALATION SPLIT */
+.esc-split{display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;border:1px solid var(--rule);margin:14px 0}
+@media(max-width:600px){.esc-split{grid-template-columns:1fr}}
+.esc-cell{padding:24px}
+.esc-cell:first-child{background:var(--redbg);border-right:1px solid #FECACA}
+.esc-cell:last-child{background:#F0FDF4}
+@media(max-width:600px){.esc-cell:first-child{border-right:none;border-bottom:1px solid #FECACA}}
+.esc-head{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.esc-cell:first-child .esc-head{color:#B91C1C}
+.esc-cell:last-child .esc-head{color:var(--gd)}
+.esc-title{font-size:14.5px;font-weight:800;margin-bottom:12px}
+.esc-cell:first-child .esc-title{color:var(--ink)}
+.esc-cell:last-child .esc-title{color:var(--ink)}
+.esc-cell ul{padding-left:17px}
+.esc-cell li{font-size:13px;color:var(--inkm);line-height:1.65;margin-bottom:4px}
+
+/* POSH GRID */
+.posh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0}
+@media(max-width:560px){.posh-grid{grid-template-columns:1fr}}
+.posh-card{
+  background:var(--wh);border:1px solid var(--rule);border-radius:13px;
+  padding:20px;display:flex;gap:14px;align-items:flex-start;
+  transition:box-shadow .18s,transform .18s;
+}
+.posh-card:hover{box-shadow:0 6px 22px rgba(26,49,169,.08);transform:translateY(-2px)}
+.posh-icon-wrap{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.posh-icon-wrap svg{width:19px;height:19px}
+.posh-card-title{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.posh-card p{font-size:12.5px;color:var(--inkm);line-height:1.6}
+
+/* LEVELS */
+.level-row{
+  display:flex;align-items:center;gap:13px;
+  background:var(--wh);border:1px solid var(--rule);border-radius:9px;
+  padding:11px 15px;margin-bottom:7px;transition:box-shadow .15s;
+}
+.level-row:hover{box-shadow:0 3px 14px rgba(26,49,169,.08)}
+.lb{width:34px;height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+.lb-ic{background:#DBEAFE;color:var(--bd)}
+.lb-mg{background:var(--gl);color:var(--gd)}
+.level-row h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:1px}
+.level-row p{font-size:12px;color:var(--inkl)}
+
+/* STAY INTERVIEW TABS */
+.tab-nav{display:flex;gap:6px;margin-bottom:-1px;position:relative;z-index:1}
+.tab-btn{
+  padding:10px 18px;border-radius:9px 9px 0 0;
+  background:var(--wh);border:1px solid var(--rule);border-bottom:none;
+  font-size:12.5px;font-weight:600;color:var(--inkl);cursor:pointer;
+  transition:all .15s;
+}
+.tab-btn:hover{color:var(--bd)}
+.tab-btn.active{background:var(--bd);color:var(--wh);border-color:var(--bd)}
+.tab-panel{display:none;background:var(--wh);border:1px solid var(--rule);border-radius:0 12px 12px 12px;padding:22px;margin-bottom:18px}
+.tab-panel.active{display:block}
+
+/* STEP FLOW */
+.sf{display:flex;gap:0;margin:14px 0}
+.sf-step{
+  flex:1;background:var(--wh);border:1px solid var(--rule);
+  border-right:none;padding:20px 15px;text-align:center;
+  position:relative;
+}
+.sf-step:first-child{border-radius:12px 0 0 12px}
+.sf-step:last-child{border-radius:0 12px 12px 0;border-right:1px solid var(--rule)}
+.sf-step::after{
+  content:'';position:absolute;right:-15px;top:50%;transform:translateY(-50%);
+  width:0;height:0;
+  border-top:16px solid transparent;border-bottom:16px solid transparent;
+  border-left:14px solid var(--rule);z-index:2;
+}
+.sf-step:last-child::after{display:none}
+.sf-step::before{
+  content:'';position:absolute;right:-14px;top:50%;transform:translateY(-50%);
+  width:0;height:0;
+  border-top:15px solid transparent;border-bottom:15px solid transparent;
+  border-left:13px solid var(--wh);z-index:3;
+}
+.sf-step:last-child::before{display:none}
+.sf-n{width:28px;height:28px;border-radius:50%;background:var(--bd);color:var(--wh);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 9px}
+.sf-step h4{font-size:12.5px;font-weight:700;color:var(--bd);margin-bottom:4px}
+.sf-step p{font-size:11.5px;color:var(--inkm);line-height:1.5}
+@media(max-width:600px){
+  .sf{flex-direction:column}
+  .sf-step{border-right:1px solid var(--rule)!important;border-bottom:none;border-radius:0!important}
+  .sf-step:first-child{border-radius:12px 12px 0 0!important}
+  .sf-step:last-child{border-radius:0 0 12px 12px!important;border-bottom:1px solid var(--rule)!important}
+  .sf-step::after,.sf-step::before{display:none}
+}
+
+/* FOOTER */
+.footer{background:var(--bd);color:var(--bl);text-align:center;padding:26px 24px;font-size:12.5px}
+.footer strong{color:var(--wh)}
+
+/* SPACERS */
+.sp{height:32px}.spsm{height:16px}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-kicker"><div class="hero-kicker-line"></div>Okta India &nbsp;·&nbsp; Internal Resource</div>
+      <h1>People Manager<br><em>Playbook</em> — India</h1>
+      <p class="hero-desc">A comprehensive operational guide for India-based and global managers leading teams in Bengaluru. Covers performance, compliance, culture, retention, and everything in between.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><span class="hero-meta-label">Audience</span><span class="hero-meta-val">India-Based &amp; Global Managers</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Scope</span><span class="hero-meta-val">Guidance · Not Policy</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-label">Office</span><span class="hero-meta-val">Bengaluru, India</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="ha-card">
+        <div class="ha-card-title">Manager Accountability Areas</div>
+        <div class="ha-item"><div class="ha-dot" style="background:var(--bl)"></div><span class="ha-text">Team Performance</span></div>
+        <div class="ha-item"><div class="ha-dot" style="background:var(--gm)"></div><span class="ha-text">Retention &amp; Engagement</span></div>
+        <div class="ha-item"><div class="ha-dot" style="background:var(--bd2)"></div><span class="ha-text">Compliance &amp; Legal Requirements</span></div>
+        <div class="ha-item"><div class="ha-dot" style="background:#FCA5A5"></div><span class="ha-text">Escalation of Sensitive Issues</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<div class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="nav-logo-circle">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="white" opacity=".5"/><circle cx="12" cy="12" r="1" fill="white"/></svg>
+      </div>
+      <span class="nav-logo-name">Okta India</span>
+    </div>
+    <button class="nb active" onclick="show('overview',this)">Overview</button>
+    <button class="nb" onclick="show('org',this)">Org &amp; Governance</button>
+    <button class="nb" onclick="show('performance',this)">Performance</button>
+    <button class="nb" onclick="show('promotions',this)">Promotions &amp; Levels</button>
+    <button class="nb" onclick="show('compensation',this)">Compensation</button>
+    <button class="nb" onclick="show('er-legal',this)">ER &amp; Legal</button>
+    <button class="nb" onclick="show('culture',this)">Culture &amp; Engagement</button>
+    <button class="nb" onclick="show('retention',this)">Retention</button>
+    <button class="nb" onclick="show('crisis',this)">Crisis Guide</button>
+    <button class="nb" onclick="show('onboarding',this)">Onboarding</button>
+    <button class="nb" onclick="show('hiring',this)">Hiring</button>
+    <button class="nb" onclick="show('exits',this)">Exits</button>
+    <button class="nb" onclick="show('contacts',this)">Contacts &amp; Escalation</button>
+  </div>
+</div>
+
+<!-- ══ PAGE ══════════════════════════════════════════ -->
+<div class="page">
+
+
+<!-- ─── OVERVIEW ──────────────────────────────────── -->
+<div id="overview" class="panel active">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#EEF2FF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Purpose &amp; Operating Context</h2>
+      <p>This playbook provides practical, actionable guidance for managing teams in India. It covers operational, HR, and cultural guidance specific to the India context while aligning with Okta's global standards. This is a guidance resource, not a policy document.</p>
+    </div>
+  </div>
+
+  <div class="callout co-blue">
+    <div class="cbr"></div>
+    <div><strong>Who this is for</strong>India-based people managers and global managers with direct reports in India. If you manage someone listed in Workday as "Bengaluru" or "Remote — India," this playbook applies to you.</div>
+  </div>
+
+  <div class="sl">India Office at a Glance</div>
+  <div class="g3">
+    <div class="card cbl">
+      <div class="c-lbl">Location</div>
+      <div class="c-title">Bengaluru Office</div>
+      <p>One of Okta's fastest-growing and most strategically important sites, contributing directly to engineering, product, customer success, GTM, and global business operations.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+        <div style="background:#EEF2FF;border-radius:8px;padding:10px 13px">
+          <div style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--bd);margin-bottom:2px">Hybrid Model</div>
+          <div style="font-size:12.5px;color:var(--inkm)">Listed as "Bengaluru" in Workday</div>
+        </div>
+        <div style="background:var(--gl);border-radius:8px;padding:10px 13px">
+          <div style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gd);margin-bottom:2px">Fully Remote</div>
+          <div style="font-size:12.5px;color:var(--gd)">Listed as "Remote — India" in Workday</div>
+        </div>
+      </div>
+    </div>
+    <div class="card cgr">
+      <div class="c-lbl">Working Hours</div>
+      <div class="c-title">9:00 AM – 6:00 PM IST</div>
+      <p>Standard hours with flexibility based on team needs. Commute times in Bengaluru can vary significantly. Managers should not routinely expect work beyond standard hours.</p>
+    </div>
+    <div class="card cteal">
+      <div class="c-lbl">Time Zone</div>
+      <div class="c-title">GMT +5:30</div>
+      <p>India overlaps partially with US and EMEA working hours. Managers must schedule critical collaborative work during overlap windows and rotate meeting times so the late-hour burden does not always fall on India.</p>
+    </div>
+  </div>
+
+  <div class="sl">Time Zone Overlap</div>
+  <div class="tz-wrap">
+    <div class="tz-row">
+      <span class="tz-lbl">India (IST)</span>
+      <div class="tz-track"><div class="tz-fill" style="left:22%;width:52%;background:var(--bd)"><span>9 AM – 6 PM · Working Hours</span></div></div>
+      <span class="tz-time">GMT +5:30</span>
+    </div>
+    <div class="tz-row">
+      <span class="tz-lbl">US Pacific (PST)</span>
+      <div class="tz-track"><div class="tz-fill" style="left:0%;width:26%;background:var(--gd)"><span>~3 hr overlap</span></div></div>
+      <span class="tz-time">GMT −8:00</span>
+    </div>
+    <div class="tz-row">
+      <span class="tz-lbl">UK (GMT)</span>
+      <div class="tz-track"><div class="tz-fill" style="left:37%;width:32%;background:var(--gm)"><span>~4 hr overlap</span></div></div>
+      <span class="tz-time">GMT +0:00</span>
+    </div>
+    <p style="font-size:11.5px;color:var(--inkl);margin-top:13px">Approximate overlap windows. Actual times vary with Daylight Saving Time adjustments.</p>
+  </div>
+
+  <div class="sl">Who to Go to — PBP vs. Site Leader</div>
+  <div class="g2">
+    <div class="card cdark">
+      <div class="c-lbl">People Business Partner</div>
+      <div class="c-title">Your PBP</div>
+      <ul>
+        <li>Performance management, development plans, and the Annual Review Process</li>
+        <li>Compensation, equity, and bonus conversations</li>
+        <li>Org design and change management</li>
+        <li>Coaching through complex or sensitive people situations</li>
+        <li>Career pathing for team members</li>
+        <li>All formal HR actions — PIP, termination, investigation</li>
+      </ul>
+    </div>
+    <div class="card cgdark">
+      <div class="c-lbl">Site Leader</div>
+      <div class="c-title">Your Site Leader</div>
+      <ul>
+        <li>Site-wide cultural events, D&amp;I programs, and town halls</li>
+        <li>Site-specific policies, safety protocols, and facilities</li>
+        <li>Cascading company and site-level communications</li>
+        <li>India-specific risks, business continuity, and employee experience</li>
+        <li>Partnering with PBPs to maintain cross-team consistency</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout co-alert">
+    <div class="cbr"></div>
+    <div><strong>Never handle alone</strong>Workplace misconduct, legal matters, POSH complaints, and mental health crises must always be escalated to your PBP immediately. Do not attempt to investigate or resolve these independently.</div>
+  </div>
+</div>
+
+
+<!-- ─── ORG & GOVERNANCE ───────────────────────────── -->
+<div id="org" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#EEF2FF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>India Org Design &amp; Governance</h2>
+      <p>How Okta India is structured, how reporting lines work, and who is responsible for which decisions.</p>
+    </div>
+  </div>
+
+  <div class="sl">Reporting Line Structure</div>
+  <div class="g2">
+    <div class="card cbl">
+      <div class="c-lbl">Solid Line</div>
+      <div class="c-title">Direct Reporting Line</div>
+      <p>Defines <strong>day-to-day accountability</strong> — task execution, performance monitoring, coaching, and development. The direct manager is fully responsible for these areas.</p>
+    </div>
+    <div class="card cgr">
+      <div class="c-lbl">Dotted Line</div>
+      <div class="c-title">Dotted-Line Relationships</div>
+      <p>Support <strong>cross-functional collaboration</strong>, knowledge sharing, and alignment with broader organisational goals. Managers must clearly communicate which responsibilities belong to each line to prevent confusion or duplication.</p>
+    </div>
+  </div>
+
+  <div class="sl">Decision Rights — Who Owns What</div>
+  <div class="callout co-blue">
+    <div class="cbr"></div>
+    <div><strong>How to read this table</strong>The Manager initiates each decision; the PBP governs or approves. Managers must never act unilaterally on terminations, formal performance actions, or compensation changes. PBP partnership is mandatory from the outset.</div>
+  </div>
+  <div class="dm">
+    <div class="dm-hd">
+      <div class="dm-hd-cell">Decision Area</div>
+      <div class="dm-hd-cell">Manager's Role</div>
+      <div class="dm-hd-cell">PBP's Role</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell dm-key">Performance Reviews</div>
+      <div class="dm-cell">Decides the rating based on performance data and delivers the outcome to the employee</div>
+      <div class="dm-cell">Consulted to ensure fairness and adherence to the performance framework</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell dm-key">Promotions</div>
+      <div class="dm-cell">Proposes the nomination and advocates by providing evidence and business justification</div>
+      <div class="dm-cell">Governs the process, reviews for consistency, and ensures company-wide standards are met</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell dm-key">Compensation</div>
+      <div class="dm-cell">Recommends adjustments based on performance and impact</div>
+      <div class="dm-cell">Governs the comp cycle, provides budget guidance, and approves the final outcome</div>
+    </div>
+    <div class="dm-row">
+      <div class="dm-cell dm-key">Involuntary Terminations</div>
+      <div class="dm-cell">Initiates concerns with the PBP and documents evidence of underperformance or misconduct</div>
+      <div class="dm-cell">Provides guidance via ER&amp;C, ensures legal compliance and risk mitigation throughout</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── PERFORMANCE ────────────────────────────────── -->
+<div id="performance" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#ECFDF5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#096256" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Performance Management</h2>
+      <p>Okta's performance framework is built on clarity and accountability. Performance outcomes should never come as a surprise to an employee.</p>
+    </div>
+  </div>
+
+  <div class="sl">The OAR Framework — Objectives, Achievements, Results</div>
+  <p style="font-size:13px;color:var(--inkm);margin-bottom:16px">OARs (Okta Alignment Reviews) are the core performance tool. Every employee documents three components each review cycle. The manager's role is to coach quality into each one.</p>
+  <div class="oar-strip">
+    <div class="oar-col">
+      <div class="oar-bg-letter">O</div>
+      <div class="oar-word">Component 1</div>
+      <div class="oar-heading">Objectives</div>
+      <div class="oar-body">
+        <ul>
+          <li>Clear, high-level goal set at the start of the cycle</li>
+          <li>Aligned with team and company priorities</li>
+          <li>Ambitious and impact-focused</li>
+        </ul>
+      </div>
+      <div class="oar-manager">
+        <div class="oar-manager-lbl">Manager's Role</div>
+        <p>Help employees set clear, impactful objectives. Ask employees to draft their own goals first — this creates immediate ownership.</p>
+      </div>
+    </div>
+    <div class="oar-col">
+      <div class="oar-bg-letter">A</div>
+      <div class="oar-word">Component 2</div>
+      <div class="oar-heading">Achievements</div>
+      <div class="oar-body">
+        <ul>
+          <li>Specific actions and projects used to pursue the Objective</li>
+          <li>Describes the "how" — effort and approach</li>
+          <li>Should be concise and clearly written</li>
+        </ul>
+      </div>
+      <div class="oar-manager">
+        <div class="oar-manager-lbl">Manager's Role</div>
+        <p>Guide team members to be specific, not vague. Vague achievements make it impossible to assess genuine contribution.</p>
+      </div>
+    </div>
+    <div class="oar-col">
+      <div class="oar-bg-letter">R</div>
+      <div class="oar-word">Component 3</div>
+      <div class="oar-heading">Results</div>
+      <div class="oar-body">
+        <ul>
+          <li>Measurable, tangible outcomes of the Achievements</li>
+          <li>Quantifiable and directly linked to the Objective</li>
+          <li>Answers the "so what"</li>
+        </ul>
+      </div>
+      <div class="oar-manager">
+        <div class="oar-manager-lbl">Manager's Role</div>
+        <p>Assist and challenge the team to quantify their impact. If a result cannot be measured, it needs to be reframed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Review Cycles — Two Checkpoints Per Year</div>
+  <div class="rc-wrap">
+    <div class="rc-half">
+      <div class="rc-tag h1"><div class="rc-tag-dot" style="background:var(--bd)"></div>H1</div>
+      <div class="rc-head">Progress Check-in</div>
+      <div class="rc-sub">First half of the year — informal and developmental</div>
+      <ul>
+        <li>Informal review focused on progress, feedback, and development</li>
+        <li><strong>No final performance levels are assigned at this stage</strong></li>
+        <li>Purpose is to course-correct early, not to evaluate</li>
+        <li>Conversations should be candid and forward-looking</li>
+      </ul>
+    </div>
+    <div class="rc-middle">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+    <div class="rc-half">
+      <div class="rc-tag h2"><div class="rc-tag-dot" style="background:var(--gd)"></div>H2</div>
+      <div class="rc-head">Final Review</div>
+      <div class="rc-sub">Second half of the year — formal and calibrated</div>
+      <ul>
+        <li>Full-year evaluation covering all OAR components</li>
+        <li>Culminates in <strong>Performance Calibrations</strong></li>
+        <li>Final performance levels are determined and documented</li>
+        <li>Outcomes inform compensation, promotion, and development plans</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Managing Low Performance — Step by Step</div>
+  <div class="sf">
+    <div class="sf-step"><div class="sf-n">1</div><h4>Provide Timely Feedback</h4><p>Address performance concerns as soon as they emerge. Do not save critical feedback for the annual review.</p></div>
+    <div class="sf-step"><div class="sf-n">2</div><h4>Set Clear Expectations</h4><p>Communicate specific and measurable improvement expectations. Document every coaching conversation.</p></div>
+    <div class="sf-step"><div class="sf-n">3</div><h4>Engage Your PBP</h4><p>If performance does not improve after coaching, or if a formal process is being considered, contact your PBP immediately.</p></div>
+  </div>
+  <div class="callout co-alert">
+    <div class="cbr"></div>
+    <div><strong>Do not manage a PIP or termination independently</strong>PBP partnership is mandatory from the moment a formal performance process is being considered. Acting unilaterally creates legal and compliance risk for Okta and for you.</div>
+  </div>
+</div>
+
+
+<!-- ─── PROMOTIONS ─────────────────────────────────── -->
+<div id="promotions" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#DBEAFE">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Promotions, Job Levels &amp; Career Growth</h2>
+      <p>Promotions reflect a genuine and sustained increase in scope and impact — not tenure, loyalty, or hard work alone.</p>
+    </div>
+  </div>
+
+  <div class="sl">Job Level Framework</div>
+  <div class="callout co-blue">
+    <div class="cbr"></div>
+    <div><strong>How job levels are determined</strong>Levels are set by scope, complexity, impact, and authority — not by how long someone has been in a role. Staying in a role for many years does not automatically qualify someone for promotion.</div>
+  </div>
+  <div class="g2">
+    <div>
+      <p style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--inkl);margin-bottom:10px">Individual Contributor Track</p>
+      <div class="level-row"><div class="lb lb-ic">P1</div><div><h4>Entry Level</h4><p>Foundation skills; supervised execution</p></div></div>
+      <div class="level-row"><div class="lb lb-ic">P2</div><div><h4>Developing</h4><p>Growing independence; broadening skills</p></div></div>
+      <div class="level-row"><div class="lb lb-ic">P3</div><div><h4>Proficient</h4><p>Strong ownership; meaningful team contribution</p></div></div>
+      <div class="level-row"><div class="lb lb-ic">P4</div><div><h4>Senior</h4><p>Cross-team impact; technical depth</p></div></div>
+      <div class="level-row"><div class="lb lb-ic">P5</div><div><h4>Staff</h4><p>Organisational influence; strategic input</p></div></div>
+      <div class="level-row"><div class="lb lb-ic">P6</div><div><h4>Principal</h4><p>Company-wide impact; domain leadership</p></div></div>
+    </div>
+    <div>
+      <p style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--inkl);margin-bottom:10px">People Manager Track</p>
+      <div class="level-row"><div class="lb lb-mg">M1</div><div><h4>Manager</h4><p>Team-level scope; direct report accountability</p></div></div>
+      <div class="level-row"><div class="lb lb-mg">M2</div><div><h4>Senior Manager</h4><p>Broader team or multi-team scope</p></div></div>
+      <div class="level-row"><div class="lb lb-mg">M3</div><div><h4>Director</h4><p>Department-level ownership</p></div></div>
+      <div class="level-row"><div class="lb lb-mg">M4</div><div><h4>Senior Director</h4><p>Cross-functional leadership</p></div></div>
+      <div class="level-row"><div class="lb lb-mg">M5</div><div><h4>Vice President</h4><p>Company-wide strategy and direction</p></div></div>
+    </div>
+  </div>
+
+  <div class="sl">The Three Pillars of a Valid Promotion Case</div>
+  <p style="font-size:13px;color:var(--inkm);margin-bottom:14px">All three criteria must be satisfied. A strong case on two out of three is not sufficient to proceed.</p>
+  <div class="pillar-row">
+    <div class="pillar">
+      <div class="pillar-num">1</div>
+      <div class="pillar-title">Business Need</div>
+      <p>There must be a sustained, long-term business need for the role at the higher level, supported by available budget. A temporary surge in workload does not qualify.</p>
+      <div class="pillar-req">Required</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">2</div>
+      <div class="pillar-title">Increased Scope</div>
+      <p>The employee must demonstrate a meaningful and measurable increase in scope, complexity, and impact — not simply doing the same job for longer.</p>
+      <div class="pillar-req">Required</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">3</div>
+      <div class="pillar-title">Individual Readiness</div>
+      <p>Sustained performance at the <em>next</em> level, already demonstrated. A "Doing Great Work (Strong)" rating is the minimum prerequisite.</p>
+      <div class="pillar-req">Required</div>
+    </div>
+  </div>
+
+  <div class="spsm"></div>
+  <div class="dd">
+    <div class="do-c"><h4>A Promotion Is</h4><ul><li>Evidence of already operating at the next level</li><li>Tied to a genuine business need and expanded scope</li><li>A forward-looking investment, not a backward-looking reward</li><li>Aligned to the annual promotion cycle and ARP process</li></ul></div>
+    <div class="dn-c"><h4>A Promotion Is Not</h4><ul><li>A reward for past hard work — use bonuses and merit increases for this</li><li>A retention tool for someone who is a flight risk</li><li>Something that can be guaranteed before calibration</li><li>Justified by tenure or loyalty alone</li></ul></div>
+  </div>
+
+  <div class="sl">Skills-Based vs. Title-Based Growth</div>
+  <div class="callout co-grn">
+    <div class="cbr"></div>
+    <div><strong>An important reframe for India</strong>In the India tech market, title progression is often seen as the only visible sign of growth. Managers must proactively reframe what growth looks like beyond a job level change.</div>
+  </div>
+  <div class="g2">
+    <div class="card cbl"><div class="c-lbl">Formal Path</div><div class="c-title">Title-Based Growth</div><ul><li>Promotion to the next job level</li><li>Formal expansion of scope and authority</li><li>Movement to a higher compensation band</li><li>Requires all three promotion pillars to be met</li></ul></div>
+    <div class="card cgr"><div class="c-lbl">Continuous Path</div><div class="c-title">Skills-Based Growth</div><ul><li>Deepening technical expertise in a domain</li><li>Taking on cross-functional ownership</li><li>Leading strategic projects without a title change</li><li>Building influence across teams and functions</li></ul></div>
+  </div>
+
+  <div class="sl">Common Promotion Challenges</div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Confusing "What" with "How" — Focusing on tasks instead of level of impact<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body"><p>A common mistake is building a promotion case around <em>what</em> an employee completed — a list of projects and tasks — rather than <em>how</em> they approached them at the next level. A strong case demonstrates strategic influence, cross-functional leadership, and a measurable step up in complexity and ownership. Completing expected work is not sufficient justification for promotion.</p></div>
+  </div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Ignoring Org Health — Promoting without a genuine business need<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body"><p>Advocating for promotions without a true business need creates a top-heavy team structure and sets unsustainable expectations. Before building a promotion case, confirm there is a genuine organisational need at the higher level and that budget is available. Promotions must be driven by business logic, not by the manager's desire to reward or retain.</p></div>
+  </div>
+</div>
+
+
+<!-- ─── COMPENSATION ───────────────────────────────── -->
+<div id="compensation" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#ECFDF5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#096256" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Compensation &amp; Rewards</h2>
+      <p>Managers own the relationship with the employee on compensation topics. The goal is to connect performance clearly to rewards — with honesty, preparation, and empathy.</p>
+    </div>
+  </div>
+
+  <div class="sl">Compensation Structure in India</div>
+  <div class="comp-trio">
+    <div class="ct-cell">
+      <div class="ct-tag">Fixed</div>
+      <div class="ct-name">Base Salary</div>
+      <p>The fixed monthly cash component. Determined through rigorous market analysis specific to the India technology sector. Increases are tied to performance reviews and the annual comp cycle.</p>
+    </div>
+    <div class="ct-cell">
+      <div class="ct-tag">Variable</div>
+      <div class="ct-name">Annual Bonus</div>
+      <p>A variable cash incentive tied to both individual performance and company-level results.</p>
+      <div class="ct-note">Bonuses are not guaranteed. They reflect performance against defined targets in a given year.</div>
+    </div>
+    <div class="ct-cell">
+      <div class="ct-tag">Long-Term</div>
+      <div class="ct-name">Equity — RSUs</div>
+      <p>A long-term incentive in the form of Restricted Stock Units. RSUs vest over time and are a significant component of total compensation in India's competitive tech talent market.</p>
+    </div>
+  </div>
+
+  <div class="sl">Four Principles for Compensation Conversations</div>
+  <div class="g4">
+    <div class="card cbl"><div style="font-size:28px;font-weight:800;color:var(--bl);line-height:1;margin-bottom:10px">01</div><div class="c-title">Own the Message</div><p>Deliver the outcome directly and with confidence. Do not defer to "HR" or "the system." You are the manager — own it.</p></div>
+    <div class="card cbl"><div style="font-size:28px;font-weight:800;color:var(--bl);line-height:1;margin-bottom:10px">02</div><div class="c-title">Be Prepared</div><p>Know the numbers, understand the philosophy, and anticipate the questions before entering the conversation.</p></div>
+    <div class="card cgr"><div style="font-size:28px;font-weight:800;color:var(--gm);line-height:1;margin-bottom:10px">03</div><div class="c-title">Connect to Impact</div><p>Link every compensation outcome to the employee's performance and the "why." Employees accept outcomes more readily when they understand the reasoning.</p></div>
+    <div class="card cgr"><div style="font-size:28px;font-weight:800;color:var(--gm);line-height:1;margin-bottom:10px">04</div><div class="c-title">Listen More</div><p>Give the employee space to process and respond. Do not over-explain. Silence after a difficult message is normal — allow it.</p></div>
+  </div>
+
+  <div class="sl">What You Can and Cannot Commit To</div>
+  <div class="callout co-warn">
+    <div class="cbr"></div>
+    <div><strong>Why this matters</strong>Making informal commitments on compensation, promotion, or job security — even with good intentions — creates legal and operational risk for Okta and damages your credibility if those commitments cannot be honoured.</div>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Area</th><th>You Cannot Commit To</th><th>You Can Commit To</th></tr></thead>
+      <tbody>
+        <tr><td class="tdk">Promotion</td><td class="tdno">That a promotion is "almost guaranteed"</td><td class="tdyes">Providing coaching and creating opportunities to demonstrate readiness</td></tr>
+        <tr><td class="tdk">Compensation</td><td class="tdno">A specific salary increase, bonus amount, or future equity grant</td><td class="tdyes">Ensuring the employee's impact is accurately represented during the review cycle</td></tr>
+        <tr><td class="tdk">Work Arrangement</td><td class="tdno">A permanent exception to the RTO policy</td><td class="tdyes">Supporting the existing flexibility policies as they stand</td></tr>
+        <tr><td class="tdk">Job Security</td><td class="tdno">That the role is guaranteed or "100% safe"</td><td class="tdyes">Providing regular, honest, and specific performance feedback</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ─── ER & LEGAL ─────────────────────────────────── -->
+<div id="er-legal" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:var(--redbg)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Employee Relations &amp; Legal Guardrails</h2>
+      <p>This section outlines key legal obligations for managers of India-based employees. For every topic covered here, the People Business Partner (PBP) is the mandatory point of contact.</p>
+    </div>
+  </div>
+
+  <div class="callout co-alert">
+    <div class="cbr"></div>
+    <div><strong>Mandatory partnership</strong>Do not attempt to independently manage a PIP, termination, POSH complaint, legal matter, or formal disciplinary action. Partner with your PBP from the very beginning. Acting alone creates significant legal risk for Okta.</div>
+  </div>
+
+  <div class="sl">Probation Period — Performance Process by Stage</div>
+  <div class="g2">
+    <div class="card cbl">
+      <div class="c-lbl">First Six Months</div>
+      <div class="c-title">Within Probation</div>
+      <p style="margin-bottom:12px">All new hires serve a formal <strong>six-month probation period</strong> to assess performance and cultural fit. A standard PIP is not used here.</p>
+      <div class="tl">
+        <div class="tl-item"><h4>Formal Coaching &amp; Feedback</h4><p>A structured coaching and feedback process is initiated instead of a standard PIP.</p></div>
+        <div class="tl-item"><h4>Strict PBP Partnership</h4><p>Managed in strict partnership with the PBP throughout. The manager provides documented coaching.</p></div>
+        <div class="tl-item"><h4>Possible Outcome</h4><p>Can lead to termination without notice if performance does not improve. The PBP manages the process after the manager's initial message delivery.</p></div>
+      </div>
+    </div>
+    <div class="card cgr">
+      <div class="c-lbl">Post-Probation</div>
+      <div class="c-title">Confirmed Employees</div>
+      <p style="margin-bottom:12px">For confirmed employees, a formal <strong>Performance Improvement Plan (PIP)</strong> is the standard process for underperformance.</p>
+      <div class="tl">
+        <div class="tl-item"><h4>PBP Partnership from Day One</h4><p>Mandatory from the very outset — before the PIP is initiated, not after.</p></div>
+        <div class="tl-item"><h4>Manager's Role</h4><p>Document coaching conversations and deliver communications to the employee.</p></div>
+        <div class="tl-item"><h4>Why It Matters</h4><p>Ensures the process is fair, thoroughly documented, and legally compliant. Do not act independently.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">POSH — Non-Negotiable Manager Duties</div>
+  <p style="font-size:13px;color:var(--inkm);margin-bottom:14px">The Prevention of Sexual Harassment (POSH) Act is Indian law. The following four duties are non-negotiable for every manager.</p>
+  <div class="posh-grid">
+    <div class="posh-card">
+      <div class="posh-icon-wrap" style="background:#DBEAFE"><svg viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <div><div class="posh-card-title">Model Professionalism</div><p class="posh-card p">Consistently model and foster a respectful, professional environment within your team. The standard starts with you.</p></div>
+    </div>
+    <div class="posh-card">
+      <div class="posh-icon-wrap" style="background:var(--gl)"><svg viewBox="0 0 24 24" fill="none" stroke="#096256" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01-.07 2.08 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div>
+      <div><div class="posh-card-title">Report — Do Not Investigate</div><p>Upon observing or hearing of any potential harassment, <strong>report to your PBP immediately.</strong> Do not attempt to investigate, validate, or mediate in any way.</p></div>
+    </div>
+    <div class="posh-card">
+      <div class="posh-icon-wrap" style="background:var(--bd2)"><svg viewBox="0 0 24 24" fill="none" stroke="#5C4A1E" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div><div class="posh-card-title">Confidentiality Has Limits</div><p>You cannot promise absolute confidentiality to anyone who raises a concern. There is a legal duty to report all concerns to appropriate internal channels.</p></div>
+    </div>
+    <div class="posh-card">
+      <div class="posh-icon-wrap" style="background:#FEE2E2"><svg viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="posh-card-title">Prevent Retaliation</div><p>Ensure the work environment remains free from retaliation against anyone who raises a concern or participates in an investigation. Retaliation is a serious violation of Okta policy.</p></div>
+    </div>
+  </div>
+
+  <div class="sl">Leave &amp; Attendance</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-title">Track in Workday</div><p>Approve and track all leave requests through <strong>Workday</strong> — the system of record for all employee data.</p></div>
+    <div class="card cgr"><div class="c-title">Statutory Leave Types</div><p>Familiarise yourself with India's statutory leave policies: <strong>Earned Leave (EL)</strong> and <strong>Sick Leave (SL)</strong>. Non-compliance creates legal risk.</p></div>
+    <div class="card cteal"><div class="c-title">Leave of Absence (LoA)</div><p>Understand Okta's Leave of Absence policy and the process for initiating one. Contact your PBP or People Operations for guidance.</p></div>
+  </div>
+
+  <div class="sl">India HR Terminology — Quick Reference</div>
+  <div class="glossary">
+    <div class="g-item"><div class="g-term">CTC</div><div class="g-def">Total Cost to Company — the full annual package value</div></div>
+    <div class="g-item"><div class="g-term">NP</div><div class="g-def">Notice Period — Okta's standard is two months</div></div>
+    <div class="g-item"><div class="g-term">PF</div><div class="g-def">Provident Fund — statutory retirement benefit</div></div>
+    <div class="g-item"><div class="g-term">Gratuity</div><div class="g-def">Statutory payout due after qualifying tenure</div></div>
+    <div class="g-item"><div class="g-term">POSH</div><div class="g-def">Prevention of Sexual Harassment Act</div></div>
+    <div class="g-item"><div class="g-term">EL / SL</div><div class="g-def">Earned Leave and Sick Leave — statutory leave types</div></div>
+  </div>
+</div>
+
+
+<!-- ─── CULTURE & ENGAGEMENT ───────────────────────── -->
+<div id="culture" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#ECFDF5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#096256" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Culture, Communication &amp; Engagement</h2>
+      <p>Effective management in India requires awareness of local cultural context. The guidance here provides helpful framing — not stereotypes. India is extraordinarily diverse.</p>
+    </div>
+  </div>
+
+  <div class="sl">What Motivates Employees in India</div>
+  <div class="g4">
+    <div class="card cbl"><div class="c-lbl">Motivator 01</div><div class="c-title">Visible Recognition</div><p>Public acknowledgement of good work matters significantly. Do not assume the team knows their contributions are valued — say it explicitly and often.</p></div>
+    <div class="card cgr"><div class="c-lbl">Motivator 02</div><div class="c-title">Growth Opportunities</div><p>Employees in India's tech market expect a clear and active path to growth. When the path is unclear, attrition risk increases quickly.</p></div>
+    <div class="card cteal"><div class="c-lbl">Motivator 03</div><div class="c-title">Skill Development</div><p>Access to learning, certifications, and new technical challenges is a strong retention driver. Invest in it proactively.</p></div>
+    <div class="card cbg"><div class="c-lbl">Motivator 04</div><div class="c-title">Manager Advocacy</div><p>Employees want to feel their manager is actively championing their interests — in promotion cycles, compensation reviews, and cross-functional visibility.</p></div>
+  </div>
+
+  <div class="sl">Building Trust in Distributed Teams</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-title">Protect the 1:1</div><p>Schedule regular, recurring one-to-one meetings and protect that time. Cancelling 1:1s repeatedly signals to employees that they are low priority.</p></div>
+    <div class="card cgr"><div class="c-title">Camera On — Default</div><p>Default to camera-on for internal team meetings. It builds personal connection, aids in reading non-verbal cues, and increases engagement. Managers model this behaviour first.</p></div>
+    <div class="card cteal"><div class="c-title">Share Strategic Context</div><p>Regularly share information about broader company and team strategy. Employees who understand the "why" behind their work are more engaged and more resilient to change.</p></div>
+  </div>
+
+  <div class="sl">Cross-Geography Operating Norms</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-title">Meeting Equity</div><p>Rotate meeting times so that the burden of early-morning or late-night calls does not always fall on the India team. This is a fairness issue, not just a scheduling preference.</p></div>
+    <div class="card cgr"><div class="c-title">A Culture of Documentation</div><p>Meeting notes, project decisions, and key updates must be stored in a central, accessible location. Time zones should never be a barrier to critical information.</p></div>
+    <div class="card cteal"><div class="c-title">Clarity on Communication Tools</div><p>Set explicit expectations for which tools are used for which purpose. For example: Slack for urgent day-to-day queries; email for formal updates and records.</p></div>
+  </div>
+
+  <div class="sl">WFH &amp; Hybrid Expectations</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-title">Define Core Hours</div><p>Set clear expectations for when team members are expected to be online and responsive. This must be explicit — not assumed.</p></div>
+    <div class="card cgr"><div class="c-title">Response Time Standards</div><p>Establish clear norms for how quickly team members should respond on Slack and email. Communicate these expectations consistently.</p></div>
+    <div class="card cteal"><div class="c-title">Outcome-Based Performance</div><p>Performance standards and quality of deliverables remain consistent regardless of where someone works. Physical location does not change the standard expected.</p></div>
+  </div>
+
+  <div class="sl">People Systems &amp; Tools Reference</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Tool</th><th>What It Is</th><th>Key Functions</th></tr></thead>
+      <tbody>
+        <tr><td class="tdk">Okta Dashboard</td><td>The gateway to all other applications</td><td>Single, secure starting point for accessing every tool needed for your role</td></tr>
+        <tr><td class="tdk">Workday</td><td>System of record — single source of truth for all employee data</td><td>OARs, compensation details, leave requests and approvals, org charts, personal data</td></tr>
+        <tr><td class="tdk">Slack</td><td>Primary platform for real-time day-to-day communication</td><td>Team and cross-organisational communication; use for urgent queries</td></tr>
+        <tr><td class="tdk">Google Workspace</td><td>Standard productivity and collaboration suite</td><td>Gmail, Google Calendar, Google Docs, and Google Drive</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ─── RETENTION ──────────────────────────────────── -->
+<div id="retention" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#ECFDF5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#096256" stroke-width="2"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/><path d="M8 12l3 3 5-5"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Retention &amp; Attrition Management</h2>
+      <p>Proactive retention is significantly more effective than reactive responses to resignation. Address the root causes before employees start looking.</p>
+    </div>
+  </div>
+
+  <div class="sl">India-Specific Attrition Triggers</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-lbl">Trigger 01</div><div class="c-title">Perceived Lack of Career Growth</div><p>When employees cannot see a clear and active path to promotion or advancement, they look externally. This is the most common attrition trigger in India's tech market.</p></div>
+    <div class="card cgr"><div class="c-lbl">Trigger 02</div><div class="c-title">Compensation Below Market</div><p>India's technology sector is highly competitive on pay. If compensation falls meaningfully below market benchmarks, employees will receive and consider competing offers.</p></div>
+    <div class="card cteal"><div class="c-lbl">Trigger 03</div><div class="c-title">Insufficient Scope &amp; Ownership</div><p>High performers seek greater impact, ownership, and scope. When they feel underutilised or constrained, engagement drops rapidly.</p></div>
+  </div>
+
+  <div class="sl">Stay Interview Guidance</div>
+  <div class="callout co-grn">
+    <div class="cbr"></div>
+    <div><strong>What is a stay interview?</strong>A proactive, structured conversation designed to understand what keeps an employee engaged at Okta — and what might cause them to leave. Unlike an exit interview, the goal is retention. Conduct these before someone is considering leaving, not after.</div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('when-to',this,'stay-tabs')">When to Conduct</button>
+    <button class="tab-btn" onclick="showTab('when-esc',this,'stay-tabs')">When to Escalate</button>
+  </div>
+  <div id="stay-tabs">
+    <div id="when-to" class="tab-panel active">
+      <ul style="padding-left:18px">
+        <li style="font-size:13px;color:var(--inkm);margin-bottom:6px;line-height:1.6">When a high performer shows signs of disengagement</li>
+        <li style="font-size:13px;color:var(--inkm);margin-bottom:6px;line-height:1.6">When an employee asks repeated questions about career progression or compensation</li>
+        <li style="font-size:13px;color:var(--inkm);margin-bottom:6px;line-height:1.6">After a significant org or role change</li>
+        <li style="font-size:13px;color:var(--inkm);line-height:1.6">After a promotion or compensation outcome that disappointed the employee</li>
+      </ul>
+    </div>
+    <div id="when-esc" class="tab-panel">
+      <p style="font-size:13px;color:var(--inkm);margin-bottom:10px">Escalate to your PBP <strong>as soon as you identify a risk.</strong> Do not wait until you are certain. Key signals include:</p>
+      <ul style="padding-left:18px">
+        <li style="font-size:13px;color:var(--inkm);margin-bottom:6px;line-height:1.6">A sudden or sustained drop in engagement or output</li>
+        <li style="font-size:13px;color:var(--inkm);margin-bottom:6px;line-height:1.6">Expressed dissatisfaction with career progression</li>
+        <li style="font-size:13px;color:var(--inkm);line-height:1.6">Repeated questions about market pay or competing roles</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Proactive Retention vs. Reactive Counter-Offers</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Dimension</th><th>Proactive Retention Strategy</th><th>Reactive Counter-Offer</th></tr></thead>
+      <tbody>
+        <tr><td class="tdk">When It Happens</td><td class="tdyes">Before the employee has resigned or started looking</td><td class="tdno">After the employee has formally resigned and presents a competing offer</td></tr>
+        <tr><td class="tdk">Nature of Conversation</td><td class="tdyes">Holistic and forward-looking — focused on aspirations, growth, and impact</td><td class="tdno">Transactional and backward-looking — focused almost entirely on matching compensation</td></tr>
+        <tr><td class="tdk">Likely Outcome</td><td class="tdyes">A mutually agreed plan that reinforces the employee's sense of value and direction</td><td class="tdno">A temporary fix. Root causes remain unaddressed. Team equity is often damaged.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl">Manager Do's and Don'ts</div>
+  <div class="dd">
+    <div class="do-c"><h4>Do</h4><ul><li>Provide regular, specific, and actionable feedback throughout the year</li><li>Partner with your PBP on all formal ER and performance actions</li><li>Publicly recognise and celebrate team successes</li><li>Schedule regular 1:1 meetings and treat them as protected time</li><li>Be aware of the official Okta India holiday schedule</li><li>Rotate meeting times fairly across time zones</li></ul></div>
+    <div class="dn-c"><h4>Don't</h4><ul><li>Wait until the annual review to deliver critical feedback</li><li>Attempt to manage a PIP or termination without PBP partnership</li><li>Assume the team knows their contributions are appreciated</li><li>Cancel 1:1 meetings frequently or treat them as optional</li><li>Always schedule meetings at times that create a late-hour burden for India</li><li>Ignore regional cultural observances and festival calendars</li></ul></div>
+  </div>
+</div>
+
+
+<!-- ─── CRISIS GUIDE ───────────────────────────────── -->
+<div id="crisis" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:var(--redbg)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Crisis &amp; Sensitive Situations</h2>
+      <p>Step-by-step guidance for handling sensitive situations professionally, ensuring compliance, safety, and genuine employee support.</p>
+    </div>
+  </div>
+
+  <div class="callout co-alert">
+    <div class="cbr"></div>
+    <div><strong>Universal rule for every crisis</strong>Employee safety comes first. Document the situation immediately. Follow company policy on leave, pay, and support. Escalate to your PBP and Site Leadership. Keep all communications professional, empathetic, and documented.</div>
+  </div>
+
+  <div class="sl">Urgent vs. Non-Urgent Escalation</div>
+  <div class="esc-split">
+    <div class="esc-cell">
+      <div class="esc-head">Immediate Escalation Required</div>
+      <div class="esc-title">Contact PBP + Site Leadership Now</div>
+      <ul><li>Harassment or POSH-related complaints</li><li>Threats, violence, or workplace safety concerns</li><li>Medical emergencies at the workplace</li><li>Any situation involving a risk to mental health or personal safety</li><li>Data breaches or compliance violations</li></ul>
+    </div>
+    <div class="esc-cell">
+      <div class="esc-head">Proactive Contact</div>
+      <div class="esc-title">Contact Your PBP Before It Escalates</div>
+      <ul><li>Performance concerns before any formal action is taken</li><li>Promotion and levelling questions</li><li>Compensation positioning concerns</li><li>Identified retention risks or potential resignations</li><li>Behavioural or conduct concerns</li><li>Team conflict affecting performance</li></ul>
+    </div>
+  </div>
+
+  <div class="sl">Situation-by-Situation Guidance</div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Medical Emergencies<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body">
+      <div class="sf">
+        <div class="sf-step"><div class="sf-n">1</div><h4>Confirm Safety</h4><p>Verify the employee is receiving immediate medical attention. All work considerations are secondary.</p></div>
+        <div class="sf-step"><div class="sf-n">2</div><h4>Notify Your PBP</h4><p>Contact your PBP immediately. They will activate all necessary internal support systems.</p></div>
+        <div class="sf-step"><div class="sf-n">3</div><h4>Cover the Work</h4><p>Reassign the employee's critical tasks and reassure the employee that their work is handled.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Family Emergencies<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body"><p>When an employee faces a serious illness, accident, or bereavement in their immediate family, the manager's role is to provide immediate and unconditional flexibility.</p><ul><li>The priority is to allow the employee to focus entirely on their family without worry about work</li><li>Notify your PBP promptly to activate appropriate leave and support mechanisms</li><li>Document the situation and follow Okta's leave and pay policies throughout</li><li>Check in with the employee compassionately — do not pressurise on timelines</li></ul></div>
+  </div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Mental Health Conversations<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body"><p>A manager's role in mental health situations is to be a <strong>supportive first point of contact</strong> — not a therapist or counsellor.</p><ul><li>Create a safe, non-judgmental environment where the employee feels heard</li><li>Guide the employee toward confidential, professional resources</li><li>Do not attempt to diagnose, counsel, or resolve the situation yourself</li><li>For any situation involving a risk to safety, escalate to your PBP and Site Leadership immediately</li></ul></div>
+  </div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Sudden Resignations<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body">
+      <div class="dd" style="margin:0">
+        <div class="do-c"><h4>Do</h4><ul><li>Receive the news professionally and calmly</li><li>Acknowledge the employee's decision without debate</li><li>Notify your PBP immediately — before making any agreements</li><li>Discuss notice period and handover requirements only after PBP guidance</li></ul></div>
+        <div class="dn-c"><h4>Don't</h4><ul><li>Become defensive or take the decision personally</li><li>Make unilateral arrangements on early release without consulting your PBP</li><li>Independently initiate a counter-offer discussion</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="acc-item">
+    <button class="acc-btn" onclick="ta(this)">Public Holidays &amp; Regional Sensitivities<svg class="ach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="acc-body"><p>India has a rich and diverse calendar of public holidays and regional festivals. Managers are expected to:</p><ul><li>Know the official Okta India public holiday schedule and plan team capacity accordingly</li><li>Demonstrate genuine sensitivity to regional cultural observances, even those not on the official schedule</li><li>Avoid scheduling critical deliverables or reviews around major festival periods without advance notice and consent</li></ul></div>
+  </div>
+
+  <div class="sl">Psychological Safety &amp; Escalation Paths</div>
+  <div class="callout co-blue">
+    <div class="cbr"></div>
+    <div><strong>The manager's dual responsibility</strong>You must be a trusted and receptive first point of contact for your team's concerns, while also making employees aware that alternative escalation paths exist — particularly for situations where the issue involves the manager directly.</div>
+  </div>
+  <div class="dm">
+    <div class="dm-hd"><div class="dm-hd-cell">Escalation Path</div><div class="dm-hd-cell" style="grid-column:span 2">When to Use It</div></div>
+    <div class="dm-row"><div class="dm-cell dm-key">Direct Manager</div><div class="dm-cell" style="grid-column:span 2">Day-to-day concerns, project roadblocks, initial performance questions, or general feedback</div></div>
+    <div class="dm-row"><div class="dm-cell dm-key">People Business Partner (PBP)</div><div class="dm-cell" style="grid-column:span 2">Sensitive interpersonal conflicts, career concerns, policy questions, or any situation where neutral guidance is needed — especially when the issue involves the direct manager</div></div>
+  </div>
+</div>
+
+
+<!-- ─── ONBOARDING ─────────────────────────────────── -->
+<div id="onboarding" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#ECFDF5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#096256" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Onboarding &amp; Knowledge Transfer</h2>
+      <p>A structured onboarding process sets the foundation for long-term success and prevents early disengagement or performance issues. Preparation begins before the employee's first day.</p>
+    </div>
+  </div>
+
+  <div class="callout co-warn">
+    <div class="cbr"></div>
+    <div><strong>If performance concerns emerge during the 90-day window</strong>Do not wait for the formal confirmation discussion. Document concerns promptly and contact your PBP before the probation period ends. Early intervention protects both the employee and the company.</div>
+  </div>
+
+  <div class="sl">30-60-90 Day Onboarding Framework</div>
+  <div class="dt">
+    <div class="db dp"><div class="db-phase">Preparation</div><div class="db-range">Before Day 1</div><ul><li>Role clarity documented in writing</li><li>30-60-90 day plan prepared and shared</li><li>System access requested in advance</li></ul></div>
+    <div class="db d30"><div class="db-phase">Orientation</div><div class="db-range">Days 0–30</div><ul><li>Role expectations explained clearly</li><li>Introduction to key stakeholders</li><li>Success metrics defined</li></ul></div>
+    <div class="db d60"><div class="db-phase">Ownership</div><div class="db-range">Days 30–60</div><ul><li>Handling tasks independently</li><li>Understanding tools and processes</li><li>Manager provides structured feedback; identifies skill gaps</li></ul></div>
+    <div class="db d90"><div class="db-phase">Performance Signal</div><div class="db-range">Days 60–90</div><ul><li>Delivers independently; raises risks proactively</li><li>Understands team norms</li><li>Manager loops in PBP if performance concerns exist</li></ul></div>
+  </div>
+
+  <div class="sl">Knowledge Transfer — Cross-Geography Best Practices</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-title">Documentation First</div><p>In distributed environments, knowledge transfer must be deliberate and written. Verbal-only handoffs create gaps that become apparent only when someone is absent or unavailable.</p></div>
+    <div class="card cgr"><div class="c-title">Async-Friendly Design</div><p>Build in buffer time for asynchronous review and questions. Do not assume real-time clarification is always possible across time zones.</p></div>
+    <div class="card cteal"><div class="c-title">Centralised Repository</div><p>Store all KT artefacts — process documents, handover notes, project context — in a single, accessible location that any team member can find regardless of time zone.</p></div>
+  </div>
+
+  <div class="sl">Learning, Upskilling &amp; Internal Transfers</div>
+  <div class="g2">
+    <div class="card cbl">
+      <div class="c-title">Manager's Role in Development</div>
+      <ul>
+        <li>Have regular career conversations to understand individual aspirations</li>
+        <li>Identify skill gaps relative to the employee's current and future goals</li>
+        <li>Approve relevant training, certifications, and learning opportunities</li>
+        <li>Assign stretch projects that allow employees to build and demonstrate new competencies</li>
+      </ul>
+    </div>
+    <div class="card cgr">
+      <div class="c-title">Internal Mobility — Eligibility</div>
+      <p style="margin-bottom:10px">Okta encourages internal mobility. Managers must be supportive of employees who explore internal moves. However, an employee is <strong>not eligible</strong> to transfer or be promoted if any of the following apply:</p>
+      <ul>
+        <li>Currently on a PIP, or completed one in the prior six months</li>
+        <li>Most recent performance rating was "Performance Improvement Required"</li>
+        <li>Has an active disciplinary action — Verbal, Written, or Final Written Warning</li>
+      </ul>
+      <p style="margin-top:10px;font-size:12px;color:var(--inkl)">An "Inconsistent Performance" rating or an active misconduct investigation may also affect eligibility — assessed case-by-case by ER&amp;C and the relevant PBP.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── HIRING ─────────────────────────────────────── -->
+<div id="hiring" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#EEF2FF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Hiring &amp; Workforce Planning</h2>
+      <p>Understanding India's talent market dynamics is essential for building effective teams and planning hiring timelines accurately.</p>
+    </div>
+  </div>
+
+  <div class="sl">India Talent Market — Key Realities</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-lbl">Market Reality 01</div><div class="c-title">Highly Competitive</div><p>There is intense competition for top technology talent in India, particularly in niche or specialised skill areas. Top candidates typically run multiple interview processes simultaneously.</p></div>
+    <div class="card cgr"><div class="c-lbl">Market Reality 02</div><div class="c-title">Long Notice Periods</div><p>Notice periods in India are typically <strong>60–90 days</strong>. Okta's standard is two months. These must be factored into annual headcount and project resource planning — a hire today is not available for nearly three months.</p></div>
+    <div class="card cteal"><div class="c-lbl">Market Reality 03</div><div class="c-title">Title &amp; Compensation Sensitivity</div><p>There is a strong cultural emphasis on title progression in India's tech market. Compensation-driven movement is common in certain skill segments. Early-career professionals change roles frequently.</p></div>
+  </div>
+
+  <div class="callout co-blue">
+    <div class="cbr"></div>
+    <div><strong>Speed and engagement matter</strong>Delayed interview feedback reduces the probability of offer acceptance. Candidate experience during the process directly impacts Okta's employer brand. Clear role definition at the outset reduces early attrition.</div>
+  </div>
+
+  <div class="sl">Offer Drop-off &amp; Acceptance Risks</div>
+  <div class="g2">
+    <div class="card cbl"><div class="c-title">Common Reasons for Offer Drop-off</div><ul><li>Counter-offers from the candidate's existing employer</li><li>Multiple competing offers being evaluated simultaneously</li><li>Delays between offer acceptance and the joining date</li></ul></div>
+    <div class="card cgr"><div class="c-title">What Managers Can Do</div><ul><li>Personally connect with final candidates after the offer stage</li><li>Maintain regular, warm engagement during the notice period</li><li>Ensure role scope and expectations are clearly defined from the start — ambiguity drives early attrition</li></ul></div>
+  </div>
+
+  <div class="sl">First-Time Manager Transition — IC to Manager</div>
+  <div class="dd">
+    <div class="dn-c"><h4>Common Mistakes to Avoid</h4><ul><li>Continuing to operate as the strongest individual contributor</li><li>Micromanaging to maintain quality control</li><li>Avoiding difficult or uncomfortable conversations</li><li>Overcompensating with authority to establish credibility</li><li>Favouring former close peers unfairly</li></ul></div>
+    <div class="do-c"><h4>What to Do Instead</h4><ul><li>Shift focus to enabling the team's performance</li><li>Trust your team and delegate genuinely</li><li>Have direct, empathetic conversations early and often</li><li>Establish new professional boundaries fairly with all team members</li><li>Build a regular check-in cadence with your PBP from day one</li></ul></div>
+  </div>
+</div>
+
+
+<!-- ─── EXITS ──────────────────────────────────────── -->
+<div id="exits" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:var(--bd2)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5C4A1E" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Resignations &amp; Exits</h2>
+      <p>Departure is a natural part of the employee lifecycle. How a manager handles it shapes the employee's lasting impression of Okta and affects remaining team members.</p>
+    </div>
+  </div>
+
+  <div class="sl">Handling Resignations Professionally</div>
+  <div class="g2">
+    <div class="card cgr">
+      <div class="c-title">Immediate Actions — What to Do</div>
+      <div class="tl" style="margin-top:12px">
+        <div class="tl-item"><h4>Acknowledge and Accept</h4><p>Listen to the employee's reason for departure without debate, argument, or counter-pressure.</p></div>
+        <div class="tl-item"><h4>Notify Your PBP Immediately</h4><p>Before making any commitments regarding exit timeline, final duties, or early release, contact your PBP.</p></div>
+        <div class="tl-item"><h4>Discuss Transition — With PBP Guidance</h4><p>Once PBP guidance has been received, clarify the last working day, handover expectations, and knowledge transfer requirements.</p></div>
+      </div>
+    </div>
+    <div class="card crd">
+      <div class="c-title">Actions to Avoid</div>
+      <ul>
+        <li>Becoming defensive, emotional, or taking the decision personally</li>
+        <li>Making unilateral decisions on early release without PBP consultation</li>
+        <li>Independently initiating a counter-offer discussion before speaking to your PBP</li>
+        <li>Sharing the news with the wider team before the employee has communicated it themselves</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Notice Period &amp; Handover</div>
+  <div class="g3">
+    <div class="card cbl"><div class="c-lbl">Standard NP</div><div class="c-title">Two-Month Notice Period</div><p>Okta's contractual notice period in India is <strong>two months</strong>. Employees are obligated to serve their full notice period unless an alternative arrangement is agreed in writing, in consultation with the PBP.</p></div>
+    <div class="card cgr"><div class="c-lbl">Early Release</div><div class="c-title">Subject to Business Discretion</div><p>Early release from the notice period is possible but is subject to <strong>business discretion and PBP consultation.</strong> This decision must never be made unilaterally by the manager.</p></div>
+    <div class="card cteal"><div class="c-lbl">Ownership</div><div class="c-title">Knowledge Transfer Plan</div><p>The manager is responsible for creating and overseeing a structured handover plan. Ensure that no critical knowledge or context is lost during the transition period.</p></div>
+  </div>
+</div>
+
+
+<!-- ─── CONTACTS ───────────────────────────────────── -->
+<div id="contacts" class="panel">
+  <div class="shdr">
+    <div class="shdr-icon" style="background:#EEF2FF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1A31A9" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    </div>
+    <div class="shdr-text">
+      <h2>Key Contacts &amp; Escalation Matrix</h2>
+      <p>Know who to contact and when. Timely escalation to the right person protects employees, your team, and Okta.</p>
+    </div>
+  </div>
+
+  <div class="sl">India HR &amp; People Team</div>
+  <div class="g2">
+    <div class="cc"><div class="cav" style="background:var(--bd)">DE</div><div><div class="cn">Deepak Emraj</div><div class="cr">People Business Partner — Okta, ORD</div></div><div style="margin-left:auto"><span class="pill p-bl">PBP</span></div></div>
+    <div class="cc"><div class="cav" style="background:var(--bm)">NG</div><div><div class="cn">Nikita Gupta</div><div class="cr">People Business Partner — COO, Finance, Sales</div></div><div style="margin-left:auto"><span class="pill p-bl">PBP</span></div></div>
+    <div class="cc"><div class="cav" style="background:var(--gd)">SV</div><div><div class="cn">Sunil Vadiesheri</div><div class="cr">People Operations</div></div><div style="margin-left:auto"><span class="pill p-gr">People Ops</span></div></div>
+    <div class="cc"><div class="cav" style="background:var(--gm)">PG</div><div><div class="cn">Pallabi Ganguli</div><div class="cr">Employee Relations &amp; Compliance (ER&amp;C)</div></div><div style="margin-left:auto"><span class="pill p-gr">ER&amp;C</span></div></div>
+    <div class="cc"><div class="cav" style="background:var(--bd)">VR</div><div><div class="cn">Vinitha Raj / Laxman Natarajan</div><div class="cr">Recruitment — Talent Acquisition</div></div><div style="margin-left:auto"><span class="pill p-bl">Talent</span></div></div>
+    <div class="cc"><div class="cav" style="background:var(--gd)">PA</div><div><div class="cn">Prachi Awasthi</div><div class="cr">Learning &amp; Development</div></div><div style="margin-left:auto"><span class="pill p-gr">L&amp;D</span></div></div>
+  </div>
+
+  <div class="sl">Escalation Matrix — Who to Contact for What</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Issue or Topic</th><th>Primary Contact</th><th>Urgency</th></tr></thead>
+      <tbody>
+        <tr><td class="tdk">Employee Relations, POSH Complaints, PIP, Termination</td><td>PBP — Deepak Emraj or Nikita Gupta</td><td><span class="badge bg-urgent">Urgent</span></td></tr>
+        <tr><td class="tdk">Compensation &amp; Job Levelling Questions</td><td>PBP — Deepak Emraj or Nikita Gupta</td><td><span class="badge bg-plan">Planned</span></td></tr>
+        <tr><td class="tdk">Opening a Requisition / Recruiting</td><td>Talent Acquisition — Vinitha Raj</td><td><span class="badge bg-plan">Planned</span></td></tr>
+        <tr><td class="tdk">Office &amp; Facilities Issues</td><td>Workplace Team — Pritu Singh</td><td><span class="badge bg-std">Standard</span></td></tr>
+        <tr><td class="tdk">IT Support &amp; Equipment</td><td>IT Service Desk</td><td><span class="badge bg-std">Standard</span></td></tr>
+        <tr><td class="tdk">Leave Management &amp; Workday Queries</td><td>People Operations — Sunil Vadiesheri / PBP</td><td><span class="badge bg-std">Standard</span></td></tr>
+        <tr><td class="tdk">Learning &amp; Development Requests</td><td>L&amp;D — Prachi Awasthi</td><td><span class="badge bg-std">Standard</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout co-grn" style="margin-top:8px">
+    <div class="cbr"></div>
+    <div><strong>When in doubt, contact your PBP</strong>Your PBP is a confidential advisor and coach — not just a process handler. First-time managers are strongly encouraged to establish a regular check-in cadence with their PBP. Early conversations prevent most issues from escalating.</div>
+  </div>
+</div>
+
+
+</div><!-- /page -->
+
+<div class="footer">
+  <strong>Okta India — People Manager Playbook</strong> &nbsp;·&nbsp; Bengaluru &nbsp;·&nbsp; Internal Use Only &nbsp;·&nbsp; This is a guidance resource, not a policy document. For all formal HR actions, partner with your People Business Partner (PBP).
+</div>
+
+<script>
+function show(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:document.querySelector('.nav').offsetTop,behavior:'smooth'});
+}
+function ta(btn){
+  const body=btn.nextElementSibling;
+  const open=btn.classList.contains('open');
+  btn.closest('.panel').querySelectorAll('.acc-btn.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});
+  if(!open){btn.classList.add('open');body.classList.add('open')}
+}
+function showTab(id,btn,container){
+  const c=document.getElementById(container);
+  c.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.closest('.tab-nav').querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
+
+							<script>
+                            	
+							</script>
+                        </body>
+                        </html>
+                    
