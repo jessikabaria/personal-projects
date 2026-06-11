@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2 Minute Timer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* height: 100vh keeps the body exactly the viewport — nothing can overflow below */
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ECEAE6 0%, #F0EFEB 50%, #F5F3F0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    /* ---- Card ---- */
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1.5px solid rgba(13, 27, 75, 0.07);
+      border-radius: 32px;
+      padding: 44px 64px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      box-shadow:
+        0 20px 56px rgba(13, 27, 75, 0.1),
+        0 4px 14px rgba(13, 27, 75, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+    }
+
+    /* ---- Ring ---- */
+    .ring-wrap {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      flex-shrink: 0;
+    }
+
+    .ring-svg {
+      position: absolute;
+      top: 0; left: 0;
+      transform: rotate(-90deg);
+    }
+
+    .ring-track {
+      fill: none;
+      stroke: rgba(13, 27, 75, 0.1);
+      stroke-width: 5.5;
+    }
+
+    .ring-fill {
+      fill: none;
+      stroke: #0D1B4B;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+      opacity: 0.78;
+      transition: stroke-dashoffset 0.95s linear, opacity 0.5s ease, stroke 0.5s ease;
+    }
+
+    .ring-wrap.running .ring-fill {
+      animation: ring-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes ring-pulse {
+      0%, 100% { opacity: 0.78; }
+      50%       { opacity: 1; }
+    }
+
+    /* ---- Content inside ring ---- */
+    .ring-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .time {
+      font-size: 68px;
+      font-weight: 800;
+      color: #0D1B4B;
+      letter-spacing: -2px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      transition: color 0.4s ease;
+    }
+
+    .time.done {
+      color: #D42B2B;
+      animation: blink 1.1s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    .sublabel {
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(13, 27, 75, 0.38);
+      transition: color 0.4s ease;
+    }
+
+    .sublabel.done { color: rgba(212, 43, 43, 0.75); }
+
+    /* ---- Buttons ---- */
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-start {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 15px 44px;
+      border-radius: 100px;
+      border: none;
+      background: #0D1B4B;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      box-shadow: 0 4px 18px rgba(13, 27, 75, 0.3);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(13, 27, 75, 0.4);
+    }
+
+    .btn-start:active { transform: translateY(0); }
+
+    .btn-reset {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      border: 1.5px solid rgba(13, 27, 75, 0.14);
+      background: rgba(13, 27, 75, 0.05);
+      color: #0D1B4B;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-reset:hover {
+      background: rgba(13, 27, 75, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .btn-reset:active { transform: translateY(0); }
+
+    .btn-reset.spin svg { animation: spin-once 0.45s ease-out; }
+
+    @keyframes spin-once {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(-360deg); }
+    }
+
+    /* ---- Branding ---- */
+    .branding {
+      position: fixed;
+      bottom: 24px;
+      right: 32px;
+      color: rgba(13, 27, 75, 0.25);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="ring-wrap" id="ringWrap">
+      <svg class="ring-svg" width="280" height="280" viewBox="0 0 280 280">
+        <circle class="ring-track" cx="140" cy="140" r="122"/>
+        <circle class="ring-fill"  cx="140" cy="140" r="122" id="ringFill"/>
+      </svg>
+      <div class="ring-content">
+        <div class="time"     id="timeDisplay">02:00</div>
+        <div class="sublabel" id="sublabelEl">MIN</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn-start" id="startBtn" onclick="toggleTimer()">
+        <svg id="btnIcon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+          <polygon points="3,1 15,8 3,15"/>
+        </svg>
+        <span id="btnText">Start Timer</span>
+      </button>
+
+      <button class="btn-reset" id="resetBtn" onclick="resetTimer()">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 4v6h6"/>
+          <path d="M3.51 15a9 9 0 1 0 .49-4"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <div class="branding">okta</div>
+
+  <script>
+    var TOTAL      = 2 * 60;
+    var remaining  = TOTAL;
+    var running    = false;
+    var ticker     = null;
+    var audioCtx   = null;
+    var alarmFired = false;
+
+    var timeEl     = document.getElementById('timeDisplay');
+    var subEl      = document.getElementById('sublabelEl');
+    var startBtn   = document.getElementById('startBtn');
+    var btnIcon    = document.getElementById('btnIcon');
+    var btnText    = document.getElementById('btnText');
+    var ringWrap   = document.getElementById('ringWrap');
+    var resetBtn   = document.getElementById('resetBtn');
+    var ring       = document.getElementById('ringFill');
+
+    var R      = 122;
+    var CIRCUM = 2 * Math.PI * R;
+    ring.style.strokeDasharray  = CIRCUM;
+    ring.style.strokeDashoffset = 0;
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function getCtx() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      return audioCtx;
+    }
+
+    function playAlarm() {
+      try {
+        var ctx = getCtx();
+        [523.25, 659.25, 783.99].forEach(function(freq, i) {
+          var osc = ctx.createOscillator(), gain = ctx.createGain();
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.type = 'sine'; osc.frequency.value = freq;
+          var t0 = ctx.currentTime + i * 0.38;
+          gain.gain.setValueAtTime(0, t0);
+          gain.gain.linearRampToValueAtTime(0.45, t0 + 0.015);
+          gain.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.1);
+          osc.start(t0); osc.stop(t0 + 1.15);
+        });
+      } catch(e) {}
+    }
+
+    document.addEventListener('click', function() {
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    });
+
+    var PLAY  = '<polygon points="3,1 15,8 3,15"/>';
+    var PAUSE = '<rect x="2" y="1" width="5" height="14" rx="1.5"/>'
+              + '<rect x="9" y="1" width="5" height="14" rx="1.5"/>';
+
+    function setBtn(state) {
+      var labels = { start: 'Start Timer', pause: 'Pause Timer', resume: 'Resume', restart: 'Restart' };
+      btnText.textContent = labels[state];
+      btnIcon.innerHTML   = (state === 'pause') ? PAUSE : PLAY;
+    }
+
+    function render() {
+      var m = Math.floor(remaining / 60);
+      var s = remaining % 60;
+      timeEl.textContent = pad(m) + ':' + pad(s);
+      ring.style.strokeDashoffset = CIRCUM * (1 - remaining / TOTAL);
+
+      if (remaining <= 0 && !alarmFired) {
+        alarmFired = true;
+        timeEl.classList.add('done');
+        subEl.textContent = 'Complete!';
+        subEl.classList.add('done');
+        ring.style.stroke   = '#D42B2B';
+        ring.style.opacity  = '1';
+        setBtn('restart');
+        ringWrap.classList.remove('running');
+        playAlarm();
+      }
+    }
+
+    function toggleTimer() {
+      if (remaining <= 0) { resetTimer(); return; }
+      if (running) {
+        clearInterval(ticker);
+        running = false;
+        setBtn('resume');
+        subEl.textContent = 'Paused';
+        ringWrap.classList.remove('running');
+      } else {
+        running = true;
+        setBtn('pause');
+        subEl.textContent = 'MIN';
+        ringWrap.classList.add('running');
+        ticker = setInterval(function() {
+          remaining = Math.max(0, remaining - 1);
+          render();
+          if (remaining <= 0) { clearInterval(ticker); running = false; }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(ticker);
+      running = false; remaining = TOTAL; alarmFired = false;
+      timeEl.classList.remove('done');
+      subEl.textContent = 'MIN';
+      subEl.classList.remove('done');
+      setBtn('start');
+      ringWrap.classList.remove('running');
+      ring.style.transition       = 'none';
+      ring.style.stroke           = '';
+      ring.style.opacity          = '';
+      ring.style.strokeDashoffset = 0;
+      requestAnimationFrame(function() {
+        ring.style.transition = 'stroke-dashoffset 0.95s linear, opacity 0.5s ease, stroke 0.5s ease';
+      });
+      resetBtn.classList.add('spin');
+      resetBtn.addEventListener('animationend', function() {
+        resetBtn.classList.remove('spin');
+      }, { once: true });
+      render();
+    }
+
+    render();
+  </script>
+
+</body>
+</html>
